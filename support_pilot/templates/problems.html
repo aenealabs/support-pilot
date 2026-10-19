@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-header"><h1>Recurring problems</h1>{% if ts %}<span class="muted">{{ ts.name }} · {{ '{:,}'.format(ts.tickets) }} tickets · grouped by their words, not by AI</span>{% endif %}</div>
+{% if message %}<div class="banner error" role="alert"><span class="material-symbols-outlined">error</span><div>{{ message }}</div></div>{% endif %}
+{% if notice %}<div class="banner success"><span class="material-symbols-outlined">check_circle</span><div>{{ notice }}</div></div>{% endif %}
+{% set gaps = problems | rejectattr('covered') | list %}
+{% if gaps %}
+<div class="card gap-card">
+  <div class="card-header"><span class="material-symbols-outlined" style="color:var(--warning)">menu_book</span><h3>Knowledge gaps</h3><span class="muted" style="margin-left:auto;font-size:12px">Problems no article covers, by ticket volume</span></div>
+  <ul class="list">{% for p in gaps %}<li class="list-item"><div class="text"><a class="primary" href="/problems/{{ p.key }}">{{ names.get(p.label, p.label) }}</a>
+    <div class="secondary">{{ p.tickets | length }} tickets · median {{ p.median_hours }} hours to resolve · write an article for this</div></div></li>{% endfor %}</ul>
+</div>
+{% endif %}
+<div class="card">
+  <table class="problems">
+    <thead><tr><th>Problem</th><th class="num">Tickets</th><th>Last 12 months</th><th class="num">Trend</th><th class="num">Hours to resolve</th><th>Knowledge base</th><th></th></tr></thead>
+    <tbody>
+    {% for p in problems %}{% set top = p.monthly | map(attribute=1) | max %}
+      <tr>
+        <td><a class="primary" href="/problems/{{ p.key }}">{{ names.get(p.label, p.label) }}</a><div class="muted mono" style="font-size:11px">{{ p.key }} · {{ p.terms | join(' · ') }}</div></td>
+        <td class="num">{{ p.tickets | length }}</td>
+        <td><span class="spark" title="{% for m, c in p.monthly %}{{ m }}: {{ c }}{{ ', ' if not loop.last }}{% endfor %}">{% for m, c in p.monthly %}<span style="height:{{ 4 + 24 * c / (top or 1) }}px"></span>{% endfor %}</span></td>
+        <td class="num">{% if p.trend is not none %}<span class="{{ 'up' if p.rising else '' }}">{{ '+' if p.trend > 0 }}{{ p.trend }}%</span>{% if p.rising %} <span class="chip warning">rising</span>{% endif %}{% endif %}</td>
+        <td class="num">{{ p.median_hours }}</td>
+        <td>{% if p.covered %}<span class="chip trace-traced" title="Linked on {{ (100 * p.article_share) | round | int }}% of these tickets">{{ p.article }}</span>{% else %}<span class="chip trace-unverified">gap</span>{% endif %}</td>
+        <td>{% if handoffs.get(p.label) %}<span class="chip outlined">Sent</span>{% elif suite_connected and user.approver %}<form method="post" action="/problems/{{ p.key }}/send"><button class="button text" type="submit">Send to Backlog Pilot</button></form>{% endif %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <div class="card-body muted" style="font-size:12px">{{ left | length }} tickets did not group with others and are not shown as problems. Trend compares the last 3 months with the 3 before; rising means at least 1.5 times and 15 more tickets. Covered means agents linked one article on at least 20% of the tickets.</div>
+</div>
+{% endblock %}

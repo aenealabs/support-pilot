@@ -1,0 +1,87 @@
+{
+  "input": "<problem>\nPRB-14: 54 tickets in 12 months; 15 in the last 3 months, 14 in the 3 before; median 22.9 hours to resolve; units: Industrial Controls 19, eMobility 16, Aerospace Systems 14, Electrical Products 5; article KB-402 linked on 54%\n</problem>\n<tickets>\nINC000694 | Classification required error | Which class do I pick for a cable gland? | Helped user pick the class and fill required attributes.\nINC000713 | Cannot release part, required attribute missing | Release of 100-005849 is blocked: required attribute missing. | Helped user pick the class and fill required attributes.\nINC000726 | Cannot release part, required attribute missing | Which class do I pick for a cable gland? | Helped user pick the class and fill required attributes.\nINC000792 | Release blocked by classification | Which class do I pick for a cable gland? | Helped user pick the class and fill required attributes.\nINC000798 | Classification required error | Which class do I pick for a cable gland? | Helped user pick the class and fill required attributes.\nINC000841 | Cannot release part, required attribute missing | Release of 450-004687 is blocked: required attribute missing. | Helped user pick the class and fill required attributes.\nINC000865 | Release blocked by classification | Part will not release, says classification incomplete. | Helped user pick the class and fill required attributes.\nINC000908 | Release blocked by classification | Which class do I pick for a cable gland? | Helped user pick the class and fill required attributes.\nINC000920 | Cannot release part, required attribute missing | Part will not release, says classification incomplete. | Helped user pick the class and fill required attributes.\nINC000958 | Classification required error | Which class do I pick for a cable gland? | Helped user pick the class and fill required attributes.\nINC000974 | Release blocked by classification | Part will not release, says classification incomplete. | Helped user pick the class and fill required attributes.\nINC001035 | Release blocked by classification | Release of 330-008061 is blocked: required attribute missing. | Helped user pick the class and fill required attributes.\nINC001092 | Cannot release part, required attribute missing | Part will not release, says classification incomplete. | Helped user pick the class and fill required attributes.\nINC001127 | Cannot release part, required attribute missing | Release of 100-008741 is blocked: required attribute missing. | Helped user pick the class and fill required attributes.\nINC001138 | Cannot release part, required attribute missing | Release of 210-006891 is blocked: required attribute missing. | Helped user pick the class and fill required attributes.\nINC001183 | Release blocked by classification | Release of 450-004763 is blocked: required attribute missing. | Helped user pick the class and fill required attributes.\nINC001184 | Release blocked by classification | Part will not release, says classification incomplete. | Helped user pick the class and fill required attributes.\nINC001208 | Release blocked by classification | Release of 450-007306 is blocked: required attribute missing. | Helped user pick the class and fill required attributes.\nINC001250 | Cannot release part, required attribute missing | Which class do I pick for a cable gland? | Helped user pick the class and fill required attributes.\nINC001327 | Classification required error | Part will not release, says classification incomplete. | Helped user pick the class and fill required attributes.\nINC001359 | Cannot release part, required attribute missing | Release of 330-007313 is blocked: required attribute missing. | Helped user pick the class and fill required attributes.\nINC001394 | Release blocked by classification | Which class do I pick for a cable gland? | Helped user pick the class and fill required attributes.\nINC001401 | Classification required error | Release of 100-008419 is blocked: required attribute missing. | Helped user pick the class and fill required attributes.\nINC001421 | Classification required error | Part will not release, says classification incomplete. | Helped user pick the class and fill required attributes.\nINC001455 | Classification required error | Which class do I pick for a cable gland? | Helped user pick the class and fill required attributes.\nINC001466 | Release blocked by classification | Which class do I pick for a cable gland? | Helped user pick the class and fill required attributes.\nINC001480 | Release blocked by classification | Which class do I pick for a cable gland? | Helped user pick the class and fill required attributes.\nINC001518 | Cannot release part, required attribute missing | Part will not release, says classification incomplete. | Helped user pick the class and fill required attributes.\nINC001566 | Cannot release part, required attribute missing | Release of 210-004918 is blocked: required attribute missing. | Helped user pick the class and fill required attributes.\nINC001571 | Classification required error | Release of 100-008140 is blocked: required attribute missing. | Helped user pick the class and fill required attributes.\nINC001648 | Cannot release part, required attribute missing | Part will not release, says classification incomplete. | Helped user pick the class and fill required attributes.\nINC001668 | Classification required error | Which class do I pick for a cable gland? | Helped user pick the class and fill required attributes.\nINC001704 | Release blocked by classification | Which class do I pick for a cable gland? | Helped user pick the class and fill required attributes.\nINC001710 | Classification required error | Release of 330-006819 is blocked: required attribute missing. | Helped user pick the class and fill required attributes.\nINC001765 | Classification required error | Which class do I pick for a cable gland? | Helped user pick the class and fill required attributes.\nINC001777 | Release blocked by classification | Part will not release, says classification incomplete. | Helped user pick the class and fill required attributes.\nINC001808 | Classification required error | Which class do I pick for a cable gland? | Helped user pick the class and fill required attributes.\nINC001819 | Cannot release part, required attribute missing | Part will not release, says classification incomplete. | Helped user pick the class and fill required attributes.\nINC001837 | Classification required error | Release of 450-007141 is blocked: required attribute missing. | Helped user pick the class and fill required attributes.\nINC001909 | Cannot release part, required attribute missing | Part will not release, says classification incomplete. | Helped user pick the class and fill required attributes.\n</tickets>",
+  "output": {
+    "name": "Part release blocked by incomplete classification / missing required attributes",
+    "summary": "Engineers try to release parts and are blocked because the part has no class or its required classification attributes are empty, and they don't know which class to pick (e.g. cable glands), so they raise a ticket and wait about a day for support to walk them through it.",
+    "root_cause": {
+      "text": "Likely the classification step is only enforced at release time, with no guidance at part creation on which class to choose or which attributes are required, so users discover the gap only when release is blocked.",
+      "quotes": [
+        {
+          "ticket": "INC000865",
+          "quote": "Part will not release, says classification incomplete."
+        },
+        {
+          "ticket": "INC000713",
+          "quote": "Release of 100-005849 is blocked: required attribute missing."
+        },
+        {
+          "ticket": "INC000694",
+          "quote": "Which class do I pick for a cable gland?"
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "text": "Every ticket is resolved the same way, by support manually helping the user choose a class and fill attributes, showing a knowledge or guidance gap rather than a system defect.",
+        "quotes": [
+          {
+            "ticket": "INC001909",
+            "quote": "Helped user pick the class and fill required attributes."
+          },
+          {
+            "ticket": "INC001035",
+            "quote": "Helped user pick the class and fill required attributes."
+          }
+        ]
+      },
+      {
+        "text": "The same question about which class fits a cable gland recurs across many tickets, suggesting one or more commodity types have no obvious class mapping.",
+        "quotes": [
+          {
+            "ticket": "INC000726",
+            "quote": "Which class do I pick for a cable gland?"
+          },
+          {
+            "ticket": "INC001466",
+            "quote": "Which class do I pick for a cable gland?"
+          },
+          {
+            "ticket": "INC001808",
+            "quote": "Which class do I pick for a cable gland?"
+          }
+        ]
+      },
+      {
+        "text": "The block hits parts across different number ranges, so it is not limited to one part family.",
+        "quotes": [
+          {
+            "ticket": "INC000841",
+            "quote": "Release of 450-004687 is blocked: required attribute missing."
+          },
+          {
+            "ticket": "INC001138",
+            "quote": "Release of 210-006891 is blocked: required attribute missing."
+          },
+          {
+            "ticket": "INC001359",
+            "quote": "Release of 330-007313 is blocked: required attribute missing."
+          }
+        ]
+      },
+      {
+        "text": "The release error tells users classification is incomplete but not what to do, so they open tickets titled with the error itself.",
+        "quotes": [
+          {
+            "ticket": "INC001327",
+            "quote": "Classification required error"
+          },
+          {
+            "ticket": "INC001184",
+            "quote": "Release blocked by classification"
+          }
+        ]
+      }
+    ],
+    "fix": "Move classification to part creation: require a class when the part is created, with a guided class picker that maps common commodity types (starting with cable glands) to their class, and validate required attributes as they are entered. When release is blocked, the error message should name the missing attributes and link to KB-402."
+  }
+}

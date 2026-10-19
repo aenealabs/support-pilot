@@ -1,0 +1,36 @@
+{
+  "input": "<question>\nMy ECO has been sitting at change board for three weeks. How do I find out who has it?\n</question>\n<passages>\n[KB-202 \u00a71] Find where your ECO is in approval - Find where your ECO is in approval\nOpen the ECO and choose the **Route** tab. The current step shows the stage (Technical Review, Change Board, or Implementation), who holds it, and since when.\n\nIf it has been in one stage for more than 10 business days, use **Route > Send reminder**. If the approver is away, their delegate is shown under **Delegations**; the change coordinator can reassign the step.\n\n[KB-204 \u00a71] Make an ECO an expedite - Make an ECO an expedite\nExpedite is for safety, line-down, or customer-down situations only. Set **Priority > Expedite** and give the reason in **Justification**. The change board chair is notified and the target for each stage drops to two business days. Misuse is reported to the change board monthly.\n\n[KB-501 \u00a71] Request a PLM role - Request a PLM role\nPLM roles (Viewer, Engineer, Change Coordinator, Librarian) are requested in the IT service portal under **Request > Engineering applications > PLM role**. Your manager approves; the role is active within two hours of approval. Change Board roles also need the change board chair's approval.\n\n[KB-201 \u00a71] Create and submit an ECO in the PLM - Create and submit an ECO in the PLM\n1. In the PLM, choose **New > Engineering Change Order** and pick the change type: design change, document change, part obsolescence, or supplier change.\n2. Add every affected part, not only the top assembly. Use **Add > From where-used** to bring in child parts and fasteners.\n3. Fill in the **Cost impact** section, including scrap and rework of existing stock.\n4. Attach the updated drawings at the new revision, not markups.\n5. Set the effectivity date after any SAP cutover window.\n6. Choose **Submit for technical review**.\n\nMost ECOs that come back are missing affected parts or cost impact.\n\n[KB-203 \u00a71] Why an ECO was returned and how to resubmit - Why an ECO was returned and how to resubmit\nA returned ECO goes back to the originator in the **Rework** stage with the reviewer's comment on the **Route** tab.\n\n1. Read the comment and fix what it asks for: usually affected parts, cost impact, drawings, or effectivity.\n2. Choose **Resubmit**. The ECO restarts at Technical Review.\n\nDo not create a new ECO for the same change: it loses the review history.\n\n[KB-401 \u00a71] Search for an existing part before creating a new one - Search for an existing part before creating a new one\nCreating a part that already exists causes duplicate inventory and qualification work.\n\n1. Use **Search > Parts > Advanced** and search by **Classification** first, then size and material; descriptions vary between engineers.\n2. Include obsolete parts in the search and check **Superseded by**.\n3. If you find a likely match in another business unit, use it; ask its owner if anything is unclear.\n\nThe data steward team reviews new parts for duplicates weekly.\n</passages>",
+  "output": {
+    "answerable": true,
+    "steps": [
+      {
+        "text": "Open the ECO and go to the Route tab. The current step shows the stage, who holds it, and since when.",
+        "cites": [
+          {
+            "passage": "KB-202 \u00a71",
+            "quote": "Open the ECO and choose the **Route** tab. The current step shows the stage (Technical Review, Change Board, or Implementation), who holds it, and since when."
+          }
+        ]
+      },
+      {
+        "text": "Three weeks is more than 10 business days, so send a reminder from the Route tab.",
+        "cites": [
+          {
+            "passage": "KB-202 \u00a71",
+            "quote": "If it has been in one stage for more than 10 business days, use **Route > Send reminder**."
+          }
+        ]
+      },
+      {
+        "text": "If the approver is away, check Delegations to see their delegate. The change coordinator can reassign the step.",
+        "cites": [
+          {
+            "passage": "KB-202 \u00a71",
+            "quote": "If the approver is away, their delegate is shown under **Delegations**; the change coordinator can reassign the step."
+          }
+        ]
+      }
+    ],
+    "ticket_summary": ""
+  }
+}

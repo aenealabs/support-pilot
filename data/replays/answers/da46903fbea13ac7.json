@@ -1,0 +1,45 @@
+{
+  "input": "<question>\nMy ECO was returned. Do I create a new one?\n</question>\n<passages>\n[KB-203 \u00a71] Why an ECO was returned and how to resubmit - Why an ECO was returned and how to resubmit\nA returned ECO goes back to the originator in the **Rework** stage with the reviewer's comment on the **Route** tab.\n\n1. Read the comment and fix what it asks for: usually affected parts, cost impact, drawings, or effectivity.\n2. Choose **Resubmit**. The ECO restarts at Technical Review.\n\nDo not create a new ECO for the same change: it loses the review history.\n\n[KB-201 \u00a71] Create and submit an ECO in the PLM - Create and submit an ECO in the PLM\n1. In the PLM, choose **New > Engineering Change Order** and pick the change type: design change, document change, part obsolescence, or supplier change.\n2. Add every affected part, not only the top assembly. Use **Add > From where-used** to bring in child parts and fasteners.\n3. Fill in the **Cost impact** section, including scrap and rework of existing stock.\n4. Attach the updated drawings at the new revision, not markups.\n5. Set the effectivity date after any SAP cutover window.\n6. Choose **Submit for technical review**.\n\nMost ECOs that come back are missing affected parts or cost impact.\n\n[KB-103 \u00a71] Restore a previous version of a CAD file - Restore a previous version of a CAD file\nEvery check-in creates a version. To go back:\n1. Right-click the file and choose **History**.\n2. Select the version and choose **Get this version**, then check it in as the latest.\n\nReleased files cannot be overwritten. To change a released file, start an ECO (see KB-201).\n\n[KB-204 \u00a71] Make an ECO an expedite - Make an ECO an expedite\nExpedite is for safety, line-down, or customer-down situations only. Set **Priority > Expedite** and give the reason in **Justification**. The change board chair is notified and the target for each stage drops to two business days. Misuse is reported to the change board monthly.\n\n[KB-202 \u00a71] Find where your ECO is in approval - Find where your ECO is in approval\nOpen the ECO and choose the **Route** tab. The current step shows the stage (Technical Review, Change Board, or Implementation), who holds it, and since when.\n\nIf it has been in one stage for more than 10 business days, use **Route > Send reminder**. If the approver is away, their delegate is shown under **Delegations**; the change coordinator can reassign the step.\n\n[KB-801 \u00a71] Getting started with the PLM for new engineers - Getting started with the PLM for new engineers\nNew engineers take the two-hour **PLM Basics** course in the learning portal, then the **ECO for Engineers** course. Your team's PLM champion can pair with you for your first ECO. The quick reference for part search, ECOs, and the vault is attached to this article.\n</passages>",
+  "output": {
+    "answerable": true,
+    "steps": [
+      {
+        "text": "No, do not create a new ECO. Rework and resubmit the returned one, because a new ECO loses the review history.",
+        "cites": [
+          {
+            "passage": "KB-203 \u00a71",
+            "quote": "Do not create a new ECO for the same change: it loses the review history."
+          }
+        ]
+      },
+      {
+        "text": "The returned ECO comes back to you in the Rework stage. The reviewer's comment is on the Route tab.",
+        "cites": [
+          {
+            "passage": "KB-203 \u00a71",
+            "quote": "A returned ECO goes back to the originator in the **Rework** stage with the reviewer's comment on the **Route** tab."
+          }
+        ]
+      },
+      {
+        "text": "Read the comment and fix what it asks for. This is usually affected parts, cost impact, drawings, or effectivity.",
+        "cites": [
+          {
+            "passage": "KB-203 \u00a71",
+            "quote": "Read the comment and fix what it asks for: usually affected parts, cost impact, drawings, or effectivity."
+          }
+        ]
+      },
+      {
+        "text": "Choose Resubmit. The ECO restarts at Technical Review.",
+        "cites": [
+          {
+            "passage": "KB-203 \u00a71",
+            "quote": "Choose **Resubmit**. The ECO restarts at Technical Review."
+          }
+        ]
+      }
+    ],
+    "ticket_summary": ""
+  }
+}

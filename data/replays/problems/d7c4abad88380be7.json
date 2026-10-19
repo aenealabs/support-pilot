@@ -1,0 +1,79 @@
+{
+  "input": "<problem>\nPRB-6: 118 tickets in 12 months; 20 in the last 3 months, 35 in the 3 before; median 27.5 hours to resolve; units: Electrical Products 40, eMobility 29, Industrial Controls 28, Aerospace Systems 21; article KB-501 linked on 50%\n</problem>\n<tickets>\nINC001222 | Cannot create parts, no permission | I can sign in but get access denied when I open parts. | Role request approved and granted.\nINC001230 | Need PLM engineer role | Need change coordinator role to route ECOs for my team. | Role request approved and granted.\nINC001233 | Access denied in PLM | New hire needs the engineer role to create parts. | Role request approved and granted.\nINC001247 | Request change coordinator role | New hire needs the engineer role to create parts. | Role request approved and granted.\nINC001261 | Cannot create parts, no permission | Need change coordinator role to route ECOs for my team. | Role request approved and granted.\nINC001279 | Need PLM engineer role | I can sign in but get access denied when I open parts. | Role request approved and granted.\nINC001282 | Cannot create parts, no permission | New hire needs the engineer role to create parts. | Role request approved and granted.\nINC001294 | Request change coordinator role | New hire needs the engineer role to create parts. | Role request approved and granted.\nINC001309 | Request change coordinator role | Need change coordinator role to route ECOs for my team. | Role request approved and granted.\nINC001324 | Access denied in PLM | New hire needs the engineer role to create parts. | Role request approved and granted.\nINC001356 | Need PLM engineer role | Need change coordinator role to route ECOs for my team. | Role request approved and granted.\nINC001363 | Access denied in PLM | New hire needs the engineer role to create parts. | Role request approved and granted.\nINC001364 | Access denied in PLM | Need change coordinator role to route ECOs for my team. | Role request approved and granted.\nINC001386 | Request change coordinator role | I can sign in but get access denied when I open parts. | Role request approved and granted.\nINC001392 | Cannot create parts, no permission | New hire needs the engineer role to create parts. | Role request approved and granted.\nINC001405 | Cannot create parts, no permission | Need change coordinator role to route ECOs for my team. | Role request approved and granted.\nINC001414 | Cannot create parts, no permission | New hire needs the engineer role to create parts. | Role request approved and granted.\nINC001418 | Cannot create parts, no permission | I can sign in but get access denied when I open parts. | Role request approved and granted.\nINC001420 | Cannot create parts, no permission | Need change coordinator role to route ECOs for my team. | Role request approved and granted.\nINC001451 | Cannot create parts, no permission | New hire needs the engineer role to create parts. | Role request approved and granted.\nINC001498 | Access denied in PLM | I can sign in but get access denied when I open parts. | Role request approved and granted.\nINC001542 | Need PLM engineer role | New hire needs the engineer role to create parts. | Role request approved and granted.\nINC001554 | Request change coordinator role | I can sign in but get access denied when I open parts. | Role request approved and granted.\nINC001558 | Request change coordinator role | I can sign in but get access denied when I open parts. | Role request approved and granted.\nINC001573 | Need PLM engineer role | New hire needs the engineer role to create parts. | Role request approved and granted.\nINC001582 | Need PLM engineer role | Need change coordinator role to route ECOs for my team. | Role request approved and granted.\nINC001584 | Cannot create parts, no permission | I can sign in but get access denied when I open parts. | Role request approved and granted.\nINC001628 | Need PLM engineer role | Need change coordinator role to route ECOs for my team. | Role request approved and granted.\nINC001639 | Need PLM engineer role | Need change coordinator role to route ECOs for my team. | Role request approved and granted.\nINC001691 | Request change coordinator role | New hire needs the engineer role to create parts. | Role request approved and granted.\nINC001695 | Need PLM engineer role | Need change coordinator role to route ECOs for my team. | Role request approved and granted.\nINC001707 | Need PLM engineer role | New hire needs the engineer role to create parts. | Role request approved and granted.\nINC001737 | Request change coordinator role | New hire needs the engineer role to create parts. | Role request approved and granted.\nINC001762 | Cannot create parts, no permission | New hire needs the engineer role to create parts. | Role request approved and granted.\nINC001780 | Request change coordinator role | New hire needs the engineer role to create parts. | Role request approved and granted.\nINC001791 | Request change coordinator role | I can sign in but get access denied when I open parts. | Role request approved and granted.\nINC001844 | Access denied in PLM | I can sign in but get access denied when I open parts. | Role request approved and granted.\nINC001861 | Cannot create parts, no permission | New hire needs the engineer role to create parts. | Role request approved and granted.\nINC001878 | Cannot create parts, no permission | Need change coordinator role to route ECOs for my team. | Role request approved and granted.\nINC001912 | Request change coordinator role | I can sign in but get access denied when I open parts. | Role request approved and granted.\n</tickets>",
+  "output": {
+    "name": "Missing PLM roles at onboarding (engineer / change coordinator access requests)",
+    "summary": "Users, often new hires, can sign in to PLM but get access denied when opening or creating parts or routing ECOs until a role request is manually approved and granted.",
+    "root_cause": {
+      "text": "Likely the PLM account provisioning grants sign-in but not the job-function roles (engineer, change coordinator), so every new hire or team change must file a ticket to get a role granted manually.",
+      "quotes": [
+        {
+          "ticket": "INC001233",
+          "quote": "New hire needs the engineer role to create parts."
+        },
+        {
+          "ticket": "INC001222",
+          "quote": "I can sign in but get access denied when I open parts."
+        },
+        {
+          "ticket": "INC001222",
+          "quote": "Role request approved and granted."
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "text": "Every ticket shown was resolved the same way, by approving and granting a role, so these are fulfillment requests, not defects.",
+        "quotes": [
+          {
+            "ticket": "INC001912",
+            "quote": "Role request approved and granted."
+          },
+          {
+            "ticket": "INC001498",
+            "quote": "Role request approved and granted."
+          }
+        ]
+      },
+      {
+        "text": "New hires repeatedly lack the engineer role needed to create parts.",
+        "quotes": [
+          {
+            "ticket": "INC001861",
+            "quote": "New hire needs the engineer role to create parts."
+          },
+          {
+            "ticket": "INC001542",
+            "quote": "New hire needs the engineer role to create parts."
+          }
+        ]
+      },
+      {
+        "text": "Change coordinator role is requested separately to route ECOs for teams.",
+        "quotes": [
+          {
+            "ticket": "INC001230",
+            "quote": "Need change coordinator role to route ECOs for my team."
+          },
+          {
+            "ticket": "INC001878",
+            "quote": "Need change coordinator role to route ECOs for my team."
+          }
+        ]
+      },
+      {
+        "text": "Users experience it as an access error rather than knowing to request a role, with titles like access denied or no permission.",
+        "quotes": [
+          {
+            "ticket": "INC001844",
+            "quote": "Access denied in PLM"
+          },
+          {
+            "ticket": "INC001418",
+            "quote": "Cannot create parts, no permission"
+          }
+        ]
+      }
+    ],
+    "fix": "Automate PLM role provisioning from HR/job-function data (e.g., assign the engineer or change coordinator role when the user's job role is set during onboarding), with a self-service, pre-approved role request for exceptions, so users do not reach PLM without the role they need."
+  }
+}

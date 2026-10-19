@@ -1,0 +1,66 @@
+{
+  "input": "<problem>\nPRB-9: 104 tickets in 12 months; 28 in the last 3 months, 19 in the 3 before; median 25.9 hours to resolve; units: Industrial Controls 29, eMobility 27, Aerospace Systems 24, Electrical Products 24; article KB-401 linked on 58%\n</problem>\n<tickets>\nINC001140 | Is there already a part for this | Cannot find 100-007422 by its description. | Showed classification search; existing part found.\nINC001152 | Search returns nothing for hex bolt M8 | Cannot find 210-005764 by its description. | Showed classification search; existing part found.\nINC001168 | Is there already a part for this | Is there an existing part for a stainless M8 bolt? Search returns hundreds. | Showed classification search; existing part found.\nINC001203 | Part search does not find 210-006086 | Search did not find the bracket so I drew it again; data steward says it is a duplicate. | Showed classification search; existing part found.\nINC001218 | Search returns nothing for hex bolt M8 | Cannot find 330-006023 by its description. | Showed classification search; existing part found.\nINC001236 | Part search does not find 100-004903 | Is there an existing part for a stainless M8 bolt? Search returns hundreds. | Showed classification search; existing part found.\nINC001353 | Search returns nothing for hex bolt M8 | Is there an existing part for a stainless M8 bolt? Search returns hundreds. | Showed classification search; existing part found.\nINC001354 | Search returns nothing for hex bolt M8 | Cannot find 100-004320 by its description. | Showed classification search; existing part found.\nINC001360 | Cannot find existing part, created a new one | Search did not find the bracket so I drew it again; data steward says it is a duplicate. | Showed classification search; existing part found.\nINC001367 | Is there already a part for this | Is there an existing part for a stainless M8 bolt? Search returns hundreds. | Showed classification search; existing part found.\nINC001389 | Part search does not find 450-007754 | Is there an existing part for a stainless M8 bolt? Search returns hundreds. | Showed classification search; existing part found.\nINC001396 | Part search does not find 450-005489 | Search did not find the bracket so I drew it again; data steward says it is a duplicate. | Showed classification search; existing part found.\nINC001474 | Cannot find existing part, created a new one | Cannot find 450-006556 by its description. | Showed classification search; existing part found.\nINC001485 | Part search does not find 210-006680 | Cannot find 210-006680 by its description. | Showed classification search; existing part found.\nINC001488 | Part search does not find 210-007046 | Is there an existing part for a stainless M8 bolt? Search returns hundreds. | Showed classification search; existing part found.\nINC001520 | Is there already a part for this | Is there an existing part for a stainless M8 bolt? Search returns hundreds. | Showed classification search; existing part found.\nINC001555 | Cannot find existing part, created a new one | Cannot find 100-008821 by its description. | Showed classification search; existing part found.\nINC001606 | Part search does not find 330-006187 | Cannot find 330-006187 by its description. | Showed classification search; existing part found.\nINC001637 | Search returns nothing for hex bolt M8 | Search did not find the bracket so I drew it again; data steward says it is a duplicate. | Showed classification search; existing part found.\nINC001674 | Cannot find existing part, created a new one | Cannot find 450-004131 by its description. | Showed classification search; existing part found.\nINC001677 | Is there already a part for this | Is there an existing part for a stainless M8 bolt? Search returns hundreds. | Showed classification search; existing part found.\nINC001720 | Part search does not find 330-006882 | Cannot find 330-006882 by its description. | Showed classification search; existing part found.\nINC001723 | Search returns nothing for hex bolt M8 | Search did not find the bracket so I drew it again; data steward says it is a duplicate. | Showed classification search; existing part found.\nINC001727 | Cannot find existing part, created a new one | Cannot find 330-007276 by its description. | Showed classification search; existing part found.\nINC001728 | Cannot find existing part, created a new one | Search did not find the bracket so I drew it again; data steward says it is a duplicate. | Showed classification search; existing part found.\nINC001731 | Search returns nothing for hex bolt M8 | Is there an existing part for a stainless M8 bolt? Search returns hundreds. | Showed classification search; existing part found.\nINC001740 | Is there already a part for this | Is there an existing part for a stainless M8 bolt? Search returns hundreds. | Showed classification search; existing part found.\nINC001749 | Part search does not find 450-004146 | Search did not find the bracket so I drew it again; data steward says it is a duplicate. | Showed classification search; existing part found.\nINC001763 | Search returns nothing for hex bolt M8 | Cannot find 100-008893 by its description. | Showed classification search; existing part found.\nINC001767 | Search returns nothing for hex bolt M8 | Cannot find 330-008719 by its description. | Showed classification search; existing part found.\nINC001807 | Cannot find existing part, created a new one | Cannot find 100-004200 by its description. | Showed classification search; existing part found.\nINC001814 | Search returns nothing for hex bolt M8 | Cannot find 450-005488 by its description. | Showed classification search; existing part found.\nINC001832 | Part search does not find 100-006369 | Search did not find the bracket so I drew it again; data steward says it is a duplicate. | Showed classification search; existing part found.\nINC001845 | Cannot find existing part, created a new one | Search did not find the bracket so I drew it again; data steward says it is a duplicate. | Showed classification search; existing part found.\nINC001846 | Is there already a part for this | Search did not find the bracket so I drew it again; data steward says it is a duplicate. | Showed classification search; existing part found.\nINC001851 | Is there already a part for this | Is there an existing part for a stainless M8 bolt? Search returns hundreds. | Showed classification search; existing part found.\nINC001860 | Part search does not find 210-005121 | Is there an existing part for a stainless M8 bolt? Search returns hundreds. | Showed classification search; existing part found.\nINC001908 | Part search does not find 450-007039 | Search did not find the bracket so I drew it again; data steward says it is a duplicate. | Showed classification search; existing part found.\nINC001919 | Is there already a part for this | Search did not find the bracket so I drew it again; data steward says it is a duplicate. | Showed classification search; existing part found.\nINC001923 | Cannot find existing part, created a new one | Cannot find 450-005332 by its description. | Showed classification search; existing part found.\n</tickets>",
+  "output": {
+    "name": "Part search misses existing parts, causing duplicate part creation",
+    "summary": "Engineers searching by description either get no results or hundreds of hits for common parts like M8 bolts and brackets, so they cannot find existing parts and sometimes create duplicates.",
+    "root_cause": {
+      "text": "Likely the default description-based part search is unreliable (inconsistent descriptions, no relevance filtering), while the classification search that does find parts is not what users reach for by default.",
+      "quotes": [
+        {
+          "ticket": "INC001152",
+          "quote": "Cannot find 210-005764 by its description."
+        },
+        {
+          "ticket": "INC001168",
+          "quote": "Search returns hundreds."
+        },
+        {
+          "ticket": "INC001168",
+          "quote": "Showed classification search; existing part found."
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "text": "Every ticket was resolved the same way, by showing the user classification search, after which the existing part was found.",
+        "quotes": [
+          {
+            "ticket": "INC001140",
+            "quote": "Showed classification search; existing part found."
+          },
+          {
+            "ticket": "INC001923",
+            "quote": "Showed classification search; existing part found."
+          }
+        ]
+      },
+      {
+        "text": "Failed searches lead engineers to redraw parts that already exist, producing duplicates flagged by the data steward.",
+        "quotes": [
+          {
+            "ticket": "INC001203",
+            "quote": "Search did not find the bracket so I drew it again; data steward says it is a duplicate."
+          },
+          {
+            "ticket": "INC001360",
+            "quote": "Cannot find existing part, created a new one"
+          }
+        ]
+      },
+      {
+        "text": "Description search fails in both directions: no results for specific parts and too many results for common fasteners.",
+        "quotes": [
+          {
+            "ticket": "INC001218",
+            "quote": "Search returns nothing for hex bolt M8"
+          },
+          {
+            "ticket": "INC001236",
+            "quote": "Is there an existing part for a stainless M8 bolt? Search returns hundreds."
+          }
+        ]
+      }
+    ],
+    "fix": "Make classification-based search the default entry point for part search and add a mandatory duplicate check (classification/attribute similarity match) in the new-part creation workflow so users are shown likely existing parts before a new part number can be created."
+  }
+}

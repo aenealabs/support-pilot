@@ -1,0 +1,36 @@
+{
+  "input": "<question>\nI keep getting 'no license available' in the mornings.\n</question>\n<passages>\n[KB-503 \u00a71] PLM license not available - PLM license not available\nEngineer licenses are shared. **No license available** means all are in use. Licenses are released after 60 minutes of inactivity. If it keeps happening in your team, your manager can request more seats in the service portal under **Request > Software > PLM license seats**.\n\n[KB-101 \u00a72] Unlock a CAD file that is checked out by someone else - If the person is available\n1. In the CAD vault client, right-click the file and choose **Properties > Checked out by** to see who has it.\n2. Ask them to check the file in, or to choose **Undo check-out** if they made no changes.\n</passages>",
+  "output": {
+    "answerable": true,
+    "steps": [
+      {
+        "text": "Engineer licenses are shared. The 'no license available' message means all licenses are currently in use.",
+        "cites": [
+          {
+            "passage": "KB-503 \u00a71",
+            "quote": "Engineer licenses are shared. **No license available** means all are in use."
+          }
+        ]
+      },
+      {
+        "text": "A license frees up after 60 minutes of inactivity, so one may become available if you wait.",
+        "cites": [
+          {
+            "passage": "KB-503 \u00a71",
+            "quote": "Licenses are released after 60 minutes of inactivity."
+          }
+        ]
+      },
+      {
+        "text": "Since it keeps happening, ask your manager to request more seats in the service portal under Request > Software > PLM license seats.",
+        "cites": [
+          {
+            "passage": "KB-503 \u00a71",
+            "quote": "If it keeps happening in your team, your manager can request more seats in the service portal under **Request > Software > PLM license seats**."
+          }
+        ]
+      }
+    ],
+    "ticket_summary": ""
+  }
+}

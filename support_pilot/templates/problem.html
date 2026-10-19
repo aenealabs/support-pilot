@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-header"><h1 class="long-title">{{ review.review.name if review else p.label }}</h1></div>
+{% if message %}<div class="banner error" role="alert"><span class="material-symbols-outlined">error</span><div>{{ message }}</div></div>{% endif %}
+{% if notice %}<div class="banner success"><span class="material-symbols-outlined">check_circle</span><div>{{ notice }}</div></div>{% endif %}
+<p class="muted" style="margin-top:-8px"><span class="mono">{{ p.key }}</span> · {{ p.tickets | length }} tickets · median {{ p.median_hours }} hours to resolve · {% for u, n in p.units %}{{ u }} {{ n }}{{ ', ' if not loop.last }}{% endfor %}</p>
+<div class="grid-2">
+  <div class="card">
+    <div class="card-header"><h3>Most recent tickets</h3><span class="muted" style="margin-left:auto;font-size:12px">12 of {{ p.tickets | length }}</span></div>
+    <table><thead><tr><th>Ticket</th><th>Opened</th><th>What they said</th></tr></thead><tbody>
+    {% for t in sample %}<tr><td class="mono">{{ t.ticket }}</td><td style="font-size:12px">{{ t.created.strftime('%Y-%m-%d') }}</td><td style="white-space:normal"><strong>{{ t.short_description }}</strong><div class="muted" style="font-size:13px">{{ t.description }}</div></td></tr>{% endfor %}
+    </tbody></table>
+  </div>
+  <div>
+
+    {% macro quotes(qs) %}{% for q in qs %}<blockquote>"{{ q.quote }}" <span class="chip outlined mono">{{ q.ticket }}</span></blockquote>{% endfor %}{% endmacro %}
+    <div class="card" id="review">
+      <div class="card-header"><span class="material-symbols-outlined" style="color:var(--primary)">auto_awesome</span><h3>Likely root cause</h3>
+        {% if review %}<span class="chip {{ 'trace-unverified' if review.flagged else 'trace-traced' }}" style="margin-left:auto">{{ (review.flagged ~ ' flagged') if review.flagged else 'every quote checked' }}</span>{% endif %}</div>
+      <div class="card-body">
+      {% if review %}{% set r = review.review %}
+        <p style="margin-top:0">{{ r.summary }}</p>
+        <div class="finding {{ 'flagged' if review.root.problems }}"><strong>{{ r.root_cause.text }}</strong>{{ quotes(r.root_cause.quotes) }}{% for x in review.root.problems %}<div class="issue-line">{{ x }}</div>{% endfor %}</div>
+        <ul class="findings">{% for f in review.evidence %}<li class="{{ 'flagged' if f.problems }}">{{ f.finding.text }}{{ quotes(f.finding.quotes) }}{% for x in f.problems %}<div class="issue-line">{{ x }}</div>{% endfor %}</li>{% endfor %}</ul>
+        <div class="prevent"><span class="material-symbols-outlined">build</span><span><strong>Fix:</strong> {{ r.fix }}</span></div>
+        <div class="muted" style="font-size:12px;margin-top:8px">{{ review_rec.drafted_by }}, requested by {{ review_rec.requested_by }}, from the {{ [p.tickets | length, 40] | min }} most recent tickets. A likely cause to investigate, not a diagnosis: the AI sees ticket text, not the systems.</div>
+      {% else %}<p style="margin-top:0;font-size:13px">Ask the AI to name this problem and suggest the likely root cause from its tickets. Every claim must quote a ticket, and code checks each quote.</p>{% endif %}
+      {% if user.approver %}<form method="post" action="/problems/{{ p.key }}/review" onsubmit="this.querySelector('button').disabled=true"><button class="button {{ 'text' if review else 'outlined' }}" type="submit"><span class="material-symbols-outlined">auto_awesome</span>{{ 'Run again' if review else 'Find the likely cause' }}</button></form>{% endif %}
+      </div>
+    </div>
+    {% if not p.covered %}
+    <div class="card gap-card" id="draft">
+      <div class="card-header"><span class="material-symbols-outlined" style="color:var(--warning)">edit_document</span><h3>Draft article for this knowledge gap</h3>
+        {% if draft_rec %}<span class="chip {{ 'trace-traced' if draft_rec.status == 'approved' else 'outlined' }}" style="margin-left:auto">{{ draft_rec.status }}{{ ' as ' ~ draft_rec.article_id if draft_rec.article_id }}</span>{% endif %}</div>
+      <div class="card-body">
+      {% if draft %}{% set d = draft.draft %}
+        <div class="primary">{{ d.title }}</div><p class="muted" style="margin-top:2px;font-size:13px">{{ d.applies_when }}</p>
+        <ol class="answer-steps">{% for s, probs in draft.steps %}<li class="{{ 'flagged' if probs }}">{{ s.text }}{{ quotes(s.quotes) }}{% for x in probs %}<div class="issue-line">{{ x }} Not published.</div>{% endfor %}</li>{% endfor %}</ol>
+        {% if d.unknowns %}<div class="overline" style="margin-top:10px">Not in the tickets: the owner fills these in</div><ul class="tight">{% for u in d.unknowns %}<li style="font-size:13px">{{ u }}</li>{% endfor %}</ul>{% endif %}
+        {% if draft_rec.status == 'draft' and user.approver %}
+        <form method="post" action="/problems/{{ p.key }}/draft/{{ draft_rec.id }}/decide" class="decide-row">
+          <button class="button contained" name="decision" value="approve" type="submit">Approve and publish</button>
+          <input name="reason" placeholder="Reason, if rejecting" aria-label="Reason">
+          <button class="button text" name="decision" value="reject" type="submit">Reject</button>
+        </form>
+        <div class="muted" style="font-size:12px">Approving publishes the checked steps and the open questions as a knowledge-base article that Ask can answer from.</div>
+        {% elif draft_rec.status != 'draft' %}<div class="muted" style="font-size:12px">{{ draft_rec.status | capitalize }} by {{ draft_rec.decided_by }}{{ ': ' ~ draft_rec.reason if draft_rec.reason }}.</div>{% endif %}
+      {% else %}<p style="margin-top:0;font-size:13px">No article covers this problem. The AI can draft one from how agents resolved these tickets, quoting them; a support lead reviews it before anyone sees it in Ask.</p>{% endif %}
+      {% if user.approver and (not draft_rec or draft_rec.status == 'rejected') %}<form method="post" action="/problems/{{ p.key }}/draft" onsubmit="this.querySelector('button').disabled=true"><button class="button outlined" type="submit"><span class="material-symbols-outlined">edit_document</span>Draft an article</button></form>{% endif %}
+      </div>
+    </div>
+    {% endif %}
+        <div class="card">
+      <div class="card-header"><h3>Knowledge base</h3></div>
+      <div class="card-body">{% if p.covered %}Agents linked <strong>{{ p.article }}</strong> ({{ titles[p.article] }}) on {{ (100 * p.article_share) | round | int }}% of these tickets.{% else %}<span class="chip trace-unverified">gap</span> No article covers this problem. Writing one would let Ask answer it.{% endif %}</div>
+    </div>
+    <div class="card">
+      <div class="card-header"><h3>Tickets per month</h3></div>
+      <div class="card-body trend">{% set top = p.monthly | map(attribute=1) | max %}
+        {% for m, c in p.monthly %}<div class="trend-row"><span class="mono">{{ m }}</span><span class="share-bar wide"><span style="width:{{ 100 * c / (top or 1) }}%"></span></span><span class="num">{{ c }}</span></div>{% endfor %}</div>
+    </div>
+    <div class="card"><div class="card-body">{% if sent %}<span class="chip outlined">Sent to Backlog Pilot by {{ sent.sent_by }}</span>{% elif suite_connected and user.approver %}<form method="post" action="/problems/{{ p.key }}/send"><button class="button outlined" type="submit"><span class="material-symbols-outlined">send</span>Send to Backlog Pilot as a problem to fix</button></form>{% else %}<span class="muted" style="font-size:13px">Support leads can send this to Backlog Pilot as a problem to fix.</span>{% endif %}</div></div>
+  </div>
+</div>
+{% endblock %}

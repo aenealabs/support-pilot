@@ -1,0 +1,66 @@
+{
+  "input": "<problem>\nPRB-7: 113 tickets in 12 months; 26 in the last 3 months, 23 in the 3 before; median 22.4 hours to resolve; units: Aerospace Systems 36, eMobility 26, Industrial Controls 26, Electrical Products 25; article KB-203 linked on 58%\n</problem>\n<tickets>\nINC001235 | ECO sent back to me | My ECO came back with a comment about affected parts; how do I fix and resubmit? | Explained the resubmit step; user resubmitted the same ECO.\nINC001248 | Reviewer rejected my ECO | My ECO came back with a comment about affected parts; how do I fix and resubmit? | Explained the resubmit step; user resubmitted the same ECO.\nINC001269 | What do I do with a returned ECO | ECO for 100-007364 was returned; do I need to create a new one? | Explained the resubmit step; user resubmitted the same ECO.\nINC001274 | ECO returned, how do I resubmit | ECO for 450-006537 was returned; do I need to create a new one? | Explained the resubmit step; user resubmitted the same ECO.\nINC001289 | ECO sent back to me | ECO for 450-008680 was returned; do I need to create a new one? | Explained the resubmit step; user resubmitted the same ECO.\nINC001313 | What do I do with a returned ECO | ECO for 210-007097 was returned; do I need to create a new one? | Explained the resubmit step; user resubmitted the same ECO.\nINC001330 | ECO sent back to me | ECO for 100-008112 was returned; do I need to create a new one? | Explained the resubmit step; user resubmitted the same ECO.\nINC001336 | ECO returned, how do I resubmit | My ECO came back with a comment about affected parts; how do I fix and resubmit? | Explained the resubmit step; user resubmitted the same ECO.\nINC001365 | What do I do with a returned ECO | Reviewer sent my ECO back, not sure what to change. | Explained the resubmit step; user resubmitted the same ECO.\nINC001375 | What do I do with a returned ECO | Reviewer sent my ECO back, not sure what to change. | Explained the resubmit step; user resubmitted the same ECO.\nINC001411 | ECO returned, how do I resubmit | ECO for 450-008985 was returned; do I need to create a new one? | Explained the resubmit step; user resubmitted the same ECO.\nINC001423 | ECO sent back to me | My ECO came back with a comment about affected parts; how do I fix and resubmit? | Explained the resubmit step; user resubmitted the same ECO.\nINC001441 | ECO returned, how do I resubmit | ECO for 100-004489 was returned; do I need to create a new one? | Explained the resubmit step; user resubmitted the same ECO.\nINC001446 | What do I do with a returned ECO | Reviewer sent my ECO back, not sure what to change. | Explained the resubmit step; user resubmitted the same ECO.\nINC001464 | Reviewer rejected my ECO | Reviewer sent my ECO back, not sure what to change. | Explained the resubmit step; user resubmitted the same ECO.\nINC001471 | ECO sent back to me | My ECO came back with a comment about affected parts; how do I fix and resubmit? | Explained the resubmit step; user resubmitted the same ECO.\nINC001484 | ECO returned, how do I resubmit | ECO for 210-004809 was returned; do I need to create a new one? | Explained the resubmit step; user resubmitted the same ECO.\nINC001486 | ECO sent back to me | My ECO came back with a comment about affected parts; how do I fix and resubmit? | Explained the resubmit step; user resubmitted the same ECO.\nINC001575 | ECO returned, how do I resubmit | My ECO came back with a comment about affected parts; how do I fix and resubmit? | Explained the resubmit step; user resubmitted the same ECO.\nINC001579 | ECO sent back to me | My ECO came back with a comment about affected parts; how do I fix and resubmit? | Explained the resubmit step; user resubmitted the same ECO.\nINC001616 | ECO returned, how do I resubmit | Reviewer sent my ECO back, not sure what to change. | Explained the resubmit step; user resubmitted the same ECO.\nINC001661 | What do I do with a returned ECO | ECO for 210-005417 was returned; do I need to create a new one? | Explained the resubmit step; user resubmitted the same ECO.\nINC001662 | ECO sent back to me | ECO for 210-008182 was returned; do I need to create a new one? | Explained the resubmit step; user resubmitted the same ECO.\nINC001681 | ECO sent back to me | Reviewer sent my ECO back, not sure what to change. | Explained the resubmit step; user resubmitted the same ECO.\nINC001696 | Reviewer rejected my ECO | My ECO came back with a comment about affected parts; how do I fix and resubmit? | Explained the resubmit step; user resubmitted the same ECO.\nINC001700 | What do I do with a returned ECO | Reviewer sent my ECO back, not sure what to change. | Explained the resubmit step; user resubmitted the same ECO.\nINC001705 | What do I do with a returned ECO | ECO for 330-007484 was returned; do I need to create a new one? | Explained the resubmit step; user resubmitted the same ECO.\nINC001709 | What do I do with a returned ECO | Reviewer sent my ECO back, not sure what to change. | Explained the resubmit step; user resubmitted the same ECO.\nINC001741 | Reviewer rejected my ECO | ECO for 450-005618 was returned; do I need to create a new one? | Explained the resubmit step; user resubmitted the same ECO.\nINC001782 | What do I do with a returned ECO | My ECO came back with a comment about affected parts; how do I fix and resubmit? | Explained the resubmit step; user resubmitted the same ECO.\nINC001785 | Reviewer rejected my ECO | ECO for 100-007804 was returned; do I need to create a new one? | Explained the resubmit step; user resubmitted the same ECO.\nINC001795 | ECO returned, how do I resubmit | My ECO came back with a comment about affected parts; how do I fix and resubmit? | Explained the resubmit step; user resubmitted the same ECO.\nINC001824 | ECO sent back to me | ECO for 330-006126 was returned; do I need to create a new one? | Explained the resubmit step; user resubmitted the same ECO.\nINC001825 | Reviewer rejected my ECO | My ECO came back with a comment about affected parts; how do I fix and resubmit? | Explained the resubmit step; user resubmitted the same ECO.\nINC001847 | What do I do with a returned ECO | My ECO came back with a comment about affected parts; how do I fix and resubmit? | Explained the resubmit step; user resubmitted the same ECO.\nINC001848 | Reviewer rejected my ECO | My ECO came back with a comment about affected parts; how do I fix and resubmit? | Explained the resubmit step; user resubmitted the same ECO.\nINC001864 | Reviewer rejected my ECO | ECO for 330-006273 was returned; do I need to create a new one? | Explained the resubmit step; user resubmitted the same ECO.\nINC001901 | What do I do with a returned ECO | ECO for 210-006026 was returned; do I need to create a new one? | Explained the resubmit step; user resubmitted the same ECO.\nINC001902 | What do I do with a returned ECO | My ECO came back with a comment about affected parts; how do I fix and resubmit? | Explained the resubmit step; user resubmitted the same ECO.\nINC001913 | What do I do with a returned ECO | Reviewer sent my ECO back, not sure what to change. | Explained the resubmit step; user resubmitted the same ECO.\n</tickets>",
+  "output": {
+    "name": "Returned ECOs: users don't know how to rework and resubmit",
+    "summary": "When a reviewer sends an ECO back, often with a comment about affected parts, engineers can't tell what to change or whether to create a new ECO, so they raise a ticket and wait about a day for support to explain the resubmit step.",
+    "root_cause": {
+      "text": "Likely the ECO return/rejection step gives users no clear guidance in the tool on what to fix or how to resubmit the same ECO, so every returned ECO becomes a how-to ticket.",
+      "quotes": [
+        {
+          "ticket": "INC001365",
+          "quote": "Reviewer sent my ECO back, not sure what to change."
+        },
+        {
+          "ticket": "INC001269",
+          "quote": "do I need to create a new one?"
+        },
+        {
+          "ticket": "INC001235",
+          "quote": "how do I fix and resubmit?"
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "text": "Every sampled ticket was resolved by explaining the resubmit step and the user resubmitting the same ECO, so no system defect was fixed.",
+        "quotes": [
+          {
+            "ticket": "INC001913",
+            "quote": "Explained the resubmit step; user resubmitted the same ECO."
+          },
+          {
+            "ticket": "INC001248",
+            "quote": "Explained the resubmit step; user resubmitted the same ECO."
+          }
+        ]
+      },
+      {
+        "text": "Users repeatedly ask whether a returned ECO requires creating a new one, showing the workflow does not make it clear that the existing ECO can be reworked.",
+        "quotes": [
+          {
+            "ticket": "INC001274",
+            "quote": "ECO for 450-006537 was returned; do I need to create a new one?"
+          },
+          {
+            "ticket": "INC001864",
+            "quote": "ECO for 330-006273 was returned; do I need to create a new one?"
+          }
+        ]
+      },
+      {
+        "text": "Reviewer return comments frequently concern affected parts, suggesting a common submission error that could be caught before review.",
+        "quotes": [
+          {
+            "ticket": "INC001336",
+            "quote": "My ECO came back with a comment about affected parts"
+          },
+          {
+            "ticket": "INC001825",
+            "quote": "My ECO came back with a comment about affected parts"
+          }
+        ]
+      }
+    ],
+    "fix": "Change the ECO return workflow so a returned ECO lands in the originator's task list with the reviewer's required changes shown and a clear 'Revise and resubmit' action on the same ECO. Pair this with a validation check on affected parts at submission so the most common return reason is caught before review."
+  }
+}

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-header"><h1>Ask</h1><span class="muted">PLM, CAD vault, and PLM-SAP questions, answered only from the knowledge base.</span></div>
+{% if message %}<div class="banner error" role="alert"><span class="material-symbols-outlined">error</span><div>{{ message }}</div></div>{% endif %}
+<div class="grid-2">
+  <div>
+    <form method="post" action="/ask" class="card card-body ask-box" onsubmit="this.querySelector('button').disabled=true">
+      <textarea name="question" rows="3" maxlength="500" placeholder="Describe the problem in your own words" aria-label="Your question" required>{{ question }}</textarea>
+      <div class="ask-actions"><button class="button contained" type="submit"><span class="material-symbols-outlined">send</span>Ask</button></div>
+      {% if not result %}<div class="suggested"><span class="overline">Try</span>
+        {% for q in questions %}<button class="chip outlined" type="button" data-question="{{ q }}">{{ q }}</button>{% endfor %}</div>{% endif %}
+    </form>
+
+    {% if result %}
+    <div class="card answer-card {{ result.outcome }}" id="answer">
+      {% if result.outcome == 'answered' %}
+      <div class="card-header"><span class="material-symbols-outlined" style="color:var(--success-dark)">verified</span><h3>Answer</h3>
+        <span class="chip trace-traced" style="margin-left:auto">every quote checked</span></div>
+      <div class="card-body">
+        <ol class="answer-steps">
+          {% for s in result.shown %}
+          <li>{{ s.text }}
+            {% for c in s.cites %}<blockquote>"{{ c.quote | replace("**", "") | replace("`", "") }}" <span class="chip outlined mono">{{ c.passage }}</span></blockquote>{% endfor %}</li>
+          {% endfor %}
+        </ol>
+        {% if result.removed %}<div class="issue-line">{{ result.removed }} step{{ '' if result.removed == 1 else 's' }} removed: the quote did not match the article word for word.</div>{% endif %}
+        {% if result.answer.ticket_summary %}<div class="muted" style="font-size:13px">Not fully covered: {{ result.answer.ticket_summary }}</div>{% endif %}
+        <div class="sources"><span class="overline">Sources</span>{% for ref in result.sources %}{% set aid = ref.split(' ')[0] %}<span class="chip outlined">{{ ref }} · {{ titles[aid] }}</span>{% endfor %}</div>
+        {% if entry and entry.solved is none %}
+        <form method="post" action="/ask/{{ entry.id }}/feedback" class="feedback">
+          <span>Did this solve it?</span>
+          <button class="button outlined" name="solved" value="yes" type="submit">Yes</button>
+          <button class="button text" name="solved" value="no" type="submit">No, I still need help</button>
+        </form>
+        {% endif %}
+      </div>
+      {% else %}
+      <div class="card-header"><span class="material-symbols-outlined" style="color:var(--warning)">help</span><h3>No answer from the knowledge base</h3></div>
+      <div class="card-body">
+        <p style="margin-top:0">The knowledge base does not explain this, so no answer is shown rather than a guess.{% if result.removed %} ({{ result.removed }} step{{ '' if result.removed == 1 else 's' }} could not be backed by an article.){% endif %}</p>
+        {% for s in result.shown %}<p style="font-size:13px">What the articles do say: {{ s.text }} {% for c in s.cites %}<span class="chip outlined mono">{{ c.passage }}</span>{% endfor %}</p>{% endfor %}
+        <div class="overline">Open a ticket with this</div>
+        <textarea class="ticket-text mono" rows="4" readonly>{{ result.answer.ticket_summary or question }}
+
+Question asked: {{ question }}
+Knowledge base searched: {{ found | map(attribute='ref') | join(', ') or 'no matching articles' }}</textarea>
+        <p class="muted" style="font-size:12px">Copy this into a PLM Support ticket. Questions like this are how missing articles get found.</p>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+
+  <div>
+    <div class="card">
+      <div class="card-header"><h3>Deflection</h3></div>
+      <div class="card-body kpi-row">
+        <div><div class="big">{{ stats.asked }}</div><div class="muted">asked</div></div>
+        <div><div class="big">{{ stats.answered }}</div><div class="muted">answered</div></div>
+        <div><div class="big">{{ stats.withheld }}</div><div class="muted">withheld</div></div>
+        <div><div class="big">{{ stats.solved }}<small>/{{ stats.rated }}</small></div><div class="muted">said solved</div></div>
+      </div>
+    </div>
+    {% if recent %}
+    <div class="card">
+      <div class="card-header"><h3>Recent questions</h3></div>
+      <ul class="list">{% for r in recent %}<li class="list-item"><div class="text"><div class="primary" style="font-size:14px">{{ r.question }}</div>
+        <div class="secondary">{{ r.outcome }}{% if r.sources %} · {{ r.sources }}{% endif %}{% if r.solved is not none %} · {{ 'solved' if r.solved else 'not solved' }}{% endif %}</div></div></li>{% endfor %}</ul>
+    </div>
+    {% endif %}
+  </div>
+</div>
+<script>
+document.querySelectorAll("[data-question]").forEach((b) => b.addEventListener("click", () => {
+  const box = document.querySelector(".ask-box textarea"); box.value = b.dataset.question; box.focus();
+}));
+</script>
+{% endblock %}

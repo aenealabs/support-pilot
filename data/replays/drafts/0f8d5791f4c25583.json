@@ -1,0 +1,57 @@
+{
+  "input": "<problem>\nPRB-3: 201 tickets in 12 months; 42 in the last 3 months, 58 in the 3 before; median 50.0 hours to resolve; units: Aerospace Systems 59, eMobility 54, Electrical Products 49, Industrial Controls 39; no knowledge-base article covers it\n</problem>\n<tickets>\nINC001482 | Cannot open export-controlled folder | Folder request in the portal was rejected; it says controlled folders are not covered. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001492 | Access denied on controlled drawings | New on the aerospace program, need to see the controlled models. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001496 | Need access to ITAR folder for program drawings | New on the aerospace program, need to see the controlled models. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001509 | Need access to ITAR folder for program drawings | New on the aerospace program, need to see the controlled models. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001524 | Cannot open export-controlled folder | I joined the program team and need the controlled drawings folder for panel_599.asm. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001535 | Need access to ITAR folder for program drawings | New on the aerospace program, need to see the controlled models. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001537 | Need access to ITAR folder for program drawings | Folder request in the portal was rejected; it says controlled folders are not covered. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001544 | Access denied on controlled drawings | I joined the program team and need the controlled drawings folder for panel_770.drw. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001547 | Access to export-controlled drawings folder | New on the aerospace program, need to see the controlled models. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001560 | Cannot open export-controlled folder | New on the aerospace program, need to see the controlled models. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001561 | Need access to ITAR folder for program drawings | I joined the program team and need the controlled drawings folder for panel_423.drw. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001570 | Cannot open export-controlled folder | I joined the program team and need the controlled drawings folder for housing_835.drw. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001585 | Access to export-controlled drawings folder | New on the aerospace program, need to see the controlled models. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001595 | Access denied on controlled drawings | I joined the program team and need the controlled drawings folder for housing_333.prt. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001601 | Access to export-controlled drawings folder | Folder request in the portal was rejected; it says controlled folders are not covered. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001608 | Cannot open export-controlled folder | Folder request in the portal was rejected; it says controlled folders are not covered. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001613 | Cannot open export-controlled folder | Folder request in the portal was rejected; it says controlled folders are not covered. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001629 | Access to export-controlled drawings folder | New on the aerospace program, need to see the controlled models. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001650 | Access denied on controlled drawings | Folder request in the portal was rejected; it says controlled folders are not covered. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001659 | Need access to ITAR folder for program drawings | New on the aerospace program, need to see the controlled models. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001665 | Access denied on controlled drawings | Folder request in the portal was rejected; it says controlled folders are not covered. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001666 | Access denied on controlled drawings | I joined the program team and need the controlled drawings folder for housing_481.drw. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001685 | Request access to controlled project folder | Folder request in the portal was rejected; it says controlled folders are not covered. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001694 | Access to export-controlled drawings folder | Folder request in the portal was rejected; it says controlled folders are not covered. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001718 | Cannot open export-controlled folder | Folder request in the portal was rejected; it says controlled folders are not covered. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001730 | Access to export-controlled drawings folder | Folder request in the portal was rejected; it says controlled folders are not covered. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001743 | Cannot open export-controlled folder | New on the aerospace program, need to see the controlled models. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001761 | Access to export-controlled drawings folder | I joined the program team and need the controlled drawings folder for panel_929.asm. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001768 | Need access to ITAR folder for program drawings | I joined the program team and need the controlled drawings folder for mount_696.drw. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001775 | Need access to ITAR folder for program drawings | I joined the program team and need the controlled drawings folder for panel_153.prt. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001802 | Access to export-controlled drawings folder | Folder request in the portal was rejected; it says controlled folders are not covered. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001818 | Access denied on controlled drawings | Folder request in the portal was rejected; it says controlled folders are not covered. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001822 | Access denied on controlled drawings | Folder request in the portal was rejected; it says controlled folders are not covered. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001828 | Access denied on controlled drawings | New on the aerospace program, need to see the controlled models. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001839 | Need access to ITAR folder for program drawings | Folder request in the portal was rejected; it says controlled folders are not covered. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001843 | Need access to ITAR folder for program drawings | Folder request in the portal was rejected; it says controlled folders are not covered. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001876 | Request access to controlled project folder | Folder request in the portal was rejected; it says controlled folders are not covered. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001883 | Cannot open export-controlled folder | New on the aerospace program, need to see the controlled models. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001890 | Cannot open export-controlled folder | I joined the program team and need the controlled drawings folder for panel_347.asm. | Routed to Trade Compliance for screening, then access granted by vault admin.\nINC001916 | Access denied on controlled drawings | Folder request in the portal was rejected; it says controlled folders are not covered. | Routed to Trade Compliance for screening, then access granted by vault admin.\n</tickets>",
+  "output": {
+    "title": "Access to export-controlled (ITAR) drawing folders in the vault",
+    "applies_when": "A user cannot open or is denied access to an export-controlled / ITAR drawings folder, often after joining a program team or after a portal folder request was rejected because controlled folders are not covered.",
+    "steps": [
+      {
+        "text": "Recognise the case: the standard portal folder request does not cover controlled folders, so a rejection there is expected for these folders.",
+        "quotes": [
+          {
+            "ticket": "INC001482",
+            "quote": "Folder request in the portal was rejected; it says controlled folders are not covered."
+          },
+          {
+            "ticket": "INC001524",
+            "quote": "I joined the program team and need the controlled drawings folder for panel_599.asm."
+          }
+        ]
+      },
+      {
+        "text": "Route the request to Trade Compliance for screening.",
+        "quotes": [
+          {
+            "ticket": "INC001482",
+            "quote": "Routed to Trade Compliance for screening"
+          },
+          {
+            "ticket": "INC001492",
+            "quote": "Routed to Trade Compliance for screening"
+          }
+        ]
+      },
+      {
+        "text": "After screening, the vault admin grants access to the controlled folder.",
+        "quotes": [
+          {
+            "ticket": "INC001482",
+            "quote": "then access granted by vault admin."
+          },
+          {
+            "ticket": "INC001916",
+            "quote": "then access granted by vault admin."
+          }
+        ]
+      }
+    ],
+    "unknowns": [
+      "How to route to Trade Compliance: which queue, form, or contact to use.",
+      "What information Trade Compliance needs for screening (e.g. citizenship/person status, program, folder or file names).",
+      "Who approves besides Trade Compliance (e.g. program manager or folder owner), if anyone.",
+      "How the vault admin is engaged after screening and which team or queue that is.",
+      "Expected timings for screening and access grant (median resolution is 50.0 hours across 201 tickets).",
+      "What the user should be told if screening is not passed.",
+      "Whether users can request this directly instead of opening an incident, to avoid the rejected portal request."
+    ]
+  }
+}

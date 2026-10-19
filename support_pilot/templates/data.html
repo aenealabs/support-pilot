@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-header"><h1>Data</h1></div>
+{% if message %}<div class="banner error" role="alert"><span class="material-symbols-outlined">error</span><div>{{ message }}</div></div>{% endif %}
+<div class="grid-2">
+  <div class="card">
+    <div class="card-header"><h3>Knowledge base</h3><span class="muted" style="margin-left:auto">{{ articles | length }} articles, {{ passages }} passages</span></div>
+    <table><thead><tr><th>Article</th><th>Category</th></tr></thead><tbody>
+    {% for a in articles.values() %}<tr><td><span class="mono">{{ a.id }}</span> {{ a.title }}</td><td>{{ a.category }}</td></tr>{% endfor %}
+    </tbody></table>
+  </div>
+  <div>
+    <div class="card"><div class="card-header"><h3>Tickets</h3></div>
+      <div class="card-body">{% if ts %}{{ ts.name }}: {{ '{:,}'.format(ts.tickets) }} tickets, loaded {{ ts.loaded_at.strftime('%Y-%m-%d') }} by {{ ts.loaded_by }}.{% else %}None loaded.{% endif %}</div></div>
+    <form class="card" method="post" action="/data" enctype="multipart/form-data">
+      <div class="card-header"><h3>Import tickets</h3></div>
+      <div class="card-body form-grid">
+        <label class="wide">Name <input name="name" placeholder="e.g. Tickets Oct 2025 to Sep 2026"></label>
+        <label class="wide">Tickets CSV <input type="file" name="file" accept=".csv,text/csv" required></label>
+        <div class="wide muted" style="font-size:12px">Columns: ticket, created, short_description, description (required); business_unit, requester, kb_article, resolved, resolution.</div>
+        <div class="wide"><button class="button contained" type="submit">Import and group</button></div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

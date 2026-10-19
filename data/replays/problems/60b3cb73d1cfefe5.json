@@ -1,0 +1,75 @@
+{
+  "input": "<problem>\nPRB-4: 184 tickets in 12 months; 34 in the last 3 months, 47 in the 3 before; median 23.5 hours to resolve; units: Aerospace Systems 54, eMobility 46, Industrial Controls 44, Electrical Products 40; article KB-202 linked on 59%\n</problem>\n<tickets>\nINC001438 | Who has my ECO | Can someone check who is holding my ECO? It has not moved since last month. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001442 | Where is my ECO | Can someone check who is holding my ECO? It has not moved since last month. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001445 | ECO waiting at change board for weeks | ECO for 210-008054 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001447 | ECO stuck in approval | My ECO has been at change board for three weeks and nobody can tell me why. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001457 | Who has my ECO | ECO for 210-008563 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001462 | ECO waiting at change board for weeks | My ECO has been at change board for three weeks and nobody can tell me why. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001469 | ECO stuck in approval | Can someone check who is holding my ECO? It has not moved since last month. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001479 | ECO stuck in approval | ECO for 330-007150 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001503 | ECO waiting at change board for weeks | ECO for 330-004398 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001538 | ECO not moving | ECO for 100-004856 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001545 | ECO stuck in approval | ECO for 210-005644 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001548 | Where is my ECO | My ECO has been at change board for three weeks and nobody can tell me why. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001552 | ECO waiting at change board for weeks | ECO for 210-004562 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001567 | ECO stuck in approval | Can someone check who is holding my ECO? It has not moved since last month. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001589 | ECO waiting at change board for weeks | ECO for 330-007977 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001593 | Who has my ECO | ECO for 210-005295 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001605 | ECO waiting at change board for weeks | Can someone check who is holding my ECO? It has not moved since last month. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001610 | Where is my ECO | My ECO has been at change board for three weeks and nobody can tell me why. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001643 | Where is my ECO | ECO for 450-008487 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001644 | ECO stuck in approval | ECO for 330-005390 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001645 | ECO waiting at change board for weeks | Can someone check who is holding my ECO? It has not moved since last month. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001658 | ECO not moving | ECO for 330-004474 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001664 | ECO stuck in approval | Can someone check who is holding my ECO? It has not moved since last month. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001701 | Where is my ECO | My ECO has been at change board for three weeks and nobody can tell me why. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001714 | ECO waiting at change board for weeks | ECO for 330-007785 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001729 | ECO stuck in approval | Can someone check who is holding my ECO? It has not moved since last month. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001733 | Who has my ECO | My ECO has been at change board for three weeks and nobody can tell me why. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001738 | ECO waiting at change board for weeks | ECO for 330-006989 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001750 | ECO waiting at change board for weeks | ECO for 450-008502 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001770 | ECO not moving | ECO for 450-006945 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001794 | Where is my ECO | My ECO has been at change board for three weeks and nobody can tell me why. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001799 | Who has my ECO | My ECO has been at change board for three weeks and nobody can tell me why. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001817 | ECO waiting at change board for weeks | Can someone check who is holding my ECO? It has not moved since last month. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001826 | Where is my ECO | Can someone check who is holding my ECO? It has not moved since last month. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001827 | Where is my ECO | ECO for 330-005550 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001842 | ECO not moving | My ECO has been at change board for three weeks and nobody can tell me why. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001863 | ECO stuck in approval | ECO for 100-006954 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001894 | ECO waiting at change board for weeks | ECO for 100-004343 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001904 | ECO stuck in approval | ECO for 210-007077 is stuck; plant needs it next week. | Showed the user the Route tab; change coordinator sent a reminder.\nINC001926 | ECO stuck in approval | My ECO has been at change board for three weeks and nobody can tell me why. | Showed the user the Route tab; change coordinator sent a reminder.\n</tickets>",
+  "output": {
+    "name": "ECOs stalled at change board with no visible owner or escalation",
+    "summary": "Engineers see their ECOs sit at the change board for weeks with no visible holder, and must raise a ticket to find out who has them and get them moving, often when a plant deadline is near.",
+    "root_cause": {
+      "text": "Likely the change board approval step has no due date, automatic reminder, or escalation, and the current approver is not surfaced to requesters, so ECOs stall until a human chases them.",
+      "quotes": [
+        {
+          "ticket": "INC001447",
+          "quote": "My ECO has been at change board for three weeks and nobody can tell me why."
+        },
+        {
+          "ticket": "INC001438",
+          "quote": "Showed the user the Route tab; change coordinator sent a reminder."
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "text": "Every resolution is identical: point the user to the Route tab and have the change coordinator send a manual reminder, meaning nothing in the system fixed itself.",
+        "quotes": [
+          {
+            "ticket": "INC001926",
+            "quote": "Showed the user the Route tab; change coordinator sent a reminder."
+          },
+          {
+            "ticket": "INC001545",
+            "quote": "Showed the user the Route tab; change coordinator sent a reminder."
+          }
+        ]
+      },
+      {
+        "text": "Users cannot tell who currently holds the ECO, which suggests the pending approver is not visible to them.",
+        "quotes": [
+          {
+            "ticket": "INC001442",
+            "quote": "Can someone check who is holding my ECO? It has not moved since last month."
+          },
+          {
+            "ticket": "INC001733",
+            "quote": "Who has my ECO"
+          }
+        ]
+      },
+      {
+        "text": "Stalls last weeks to a month, which suggests no time-based escalation on the change board step.",
+        "quotes": [
+          {
+            "ticket": "INC001462",
+            "quote": "ECO waiting at change board for weeks"
+          },
+          {
+            "ticket": "INC001469",
+            "quote": "It has not moved since last month."
+          }
+        ]
+      },
+      {
+        "text": "The delays threaten plant timelines across many part families.",
+        "quotes": [
+          {
+            "ticket": "INC001445",
+            "quote": "ECO for 210-008054 is stuck; plant needs it next week."
+          },
+          {
+            "ticket": "INC001643",
+            "quote": "ECO for 450-008487 is stuck; plant needs it next week."
+          }
+        ]
+      }
+    ],
+    "fix": "Add a due date to the change board workflow task with automatic reminders to the assigned approver, escalation to the change coordinator when it is overdue, and a requester notification that names the current holder."
+  }
+}

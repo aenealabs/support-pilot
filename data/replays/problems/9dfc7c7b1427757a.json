@@ -1,0 +1,66 @@
+{
+  "input": "<problem>\nPRB-8: 111 tickets in 12 months; 17 in the last 3 months, 25 in the 3 before; median 22.3 hours to resolve; units: Industrial Controls 37, Aerospace Systems 33, Electrical Products 23, eMobility 18; article KB-701 linked on 59%\n</problem>\n<tickets>\nINC001060 | References not found in assembly | Assembly loads with empty components. | Resolved references from vault and checked in.\nINC001079 | Missing parts when opening cover_876.drw | Opening cover_876.drw shows 14 missing references. | Resolved references from vault and checked in.\nINC001105 | References not found in assembly | Opening cover_650.prt shows 14 missing references. | Resolved references from vault and checked in.\nINC001112 | References not found in assembly | Missing references after a colleague renamed parts. | Resolved references from vault and checked in.\nINC001137 | Missing parts when opening panel_535.asm | Missing references after a colleague renamed parts. | Resolved references from vault and checked in.\nINC001158 | Missing parts when opening mount_990.prt | Opening mount_990.prt shows 14 missing references. | Resolved references from vault and checked in.\nINC001173 | References not found in assembly | Missing references after a colleague renamed parts. | Resolved references from vault and checked in.\nINC001180 | Assembly opens with missing references | Missing references after a colleague renamed parts. | Resolved references from vault and checked in.\nINC001210 | References not found in assembly | Missing references after a colleague renamed parts. | Resolved references from vault and checked in.\nINC001221 | References not found in assembly | Assembly loads with empty components. | Resolved references from vault and checked in.\nINC001234 | Missing parts when opening cover_280.prt | Missing references after a colleague renamed parts. | Resolved references from vault and checked in.\nINC001251 | Assembly opens with missing references | Missing references after a colleague renamed parts. | Resolved references from vault and checked in.\nINC001284 | Assembly opens with missing references | Assembly loads with empty components. | Resolved references from vault and checked in.\nINC001286 | Missing parts when opening bracket_953.prt | Assembly loads with empty components. | Resolved references from vault and checked in.\nINC001290 | Assembly opens with missing references | Assembly loads with empty components. | Resolved references from vault and checked in.\nINC001306 | Assembly opens with missing references | Opening cover_195.prt shows 14 missing references. | Resolved references from vault and checked in.\nINC001308 | Assembly opens with missing references | Assembly loads with empty components. | Resolved references from vault and checked in.\nINC001350 | References not found in assembly | Opening busbar_586.prt shows 14 missing references. | Resolved references from vault and checked in.\nINC001399 | References not found in assembly | Opening cover_929.drw shows 14 missing references. | Resolved references from vault and checked in.\nINC001415 | Assembly opens with missing references | Missing references after a colleague renamed parts. | Resolved references from vault and checked in.\nINC001419 | Assembly opens with missing references | Assembly loads with empty components. | Resolved references from vault and checked in.\nINC001427 | References not found in assembly | Missing references after a colleague renamed parts. | Resolved references from vault and checked in.\nINC001436 | Assembly opens with missing references | Opening bracket_262.prt shows 14 missing references. | Resolved references from vault and checked in.\nINC001504 | Assembly opens with missing references | Opening mount_126.prt shows 14 missing references. | Resolved references from vault and checked in.\nINC001506 | Missing parts when opening cover_685.drw | Opening cover_685.drw shows 14 missing references. | Resolved references from vault and checked in.\nINC001514 | Missing parts when opening panel_459.drw | Assembly loads with empty components. | Resolved references from vault and checked in.\nINC001562 | References not found in assembly | Opening mount_329.prt shows 14 missing references. | Resolved references from vault and checked in.\nINC001587 | References not found in assembly | Opening panel_735.drw shows 14 missing references. | Resolved references from vault and checked in.\nINC001621 | Assembly opens with missing references | Opening housing_109.asm shows 14 missing references. | Resolved references from vault and checked in.\nINC001638 | Assembly opens with missing references | Missing references after a colleague renamed parts. | Resolved references from vault and checked in.\nINC001640 | References not found in assembly | Assembly loads with empty components. | Resolved references from vault and checked in.\nINC001682 | Missing parts when opening mount_156.prt | Missing references after a colleague renamed parts. | Resolved references from vault and checked in.\nINC001708 | References not found in assembly | Opening bracket_727.prt shows 14 missing references. | Resolved references from vault and checked in.\nINC001725 | Assembly opens with missing references | Missing references after a colleague renamed parts. | Resolved references from vault and checked in.\nINC001757 | References not found in assembly | Missing references after a colleague renamed parts. | Resolved references from vault and checked in.\nINC001796 | References not found in assembly | Assembly loads with empty components. | Resolved references from vault and checked in.\nINC001897 | References not found in assembly | Assembly loads with empty components. | Resolved references from vault and checked in.\nINC001899 | References not found in assembly | Assembly loads with empty components. | Resolved references from vault and checked in.\nINC001911 | Assembly opens with missing references | Opening mount_781.asm shows 14 missing references. | Resolved references from vault and checked in.\nINC001921 | References not found in assembly | Assembly loads with empty components. | Resolved references from vault and checked in.\n</tickets>",
+  "output": {
+    "name": "Broken CAD references after part renames",
+    "summary": "Engineers open assemblies, parts or drawings and find missing references or empty components, often after a colleague renamed parts, and must wait for support to re-resolve references from the vault.",
+    "root_cause": {
+      "text": "Likely, renaming parts does not update the references held by parent assemblies and drawings, so dependent files lose their links until someone manually resolves them from the vault.",
+      "quotes": [
+        {
+          "ticket": "INC001112",
+          "quote": "Missing references after a colleague renamed parts."
+        },
+        {
+          "ticket": "INC001112",
+          "quote": "Resolved references from vault and checked in."
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "text": "Many tickets explicitly tie the missing references to a colleague renaming parts.",
+        "quotes": [
+          {
+            "ticket": "INC001137",
+            "quote": "Missing references after a colleague renamed parts."
+          },
+          {
+            "ticket": "INC001757",
+            "quote": "Missing references after a colleague renamed parts."
+          }
+        ]
+      },
+      {
+        "text": "The symptom affects assemblies, parts and drawings alike, showing up either as missing references or as empty components.",
+        "quotes": [
+          {
+            "ticket": "INC001079",
+            "quote": "Opening cover_876.drw shows 14 missing references."
+          },
+          {
+            "ticket": "INC001621",
+            "quote": "Opening housing_109.asm shows 14 missing references."
+          },
+          {
+            "ticket": "INC001060",
+            "quote": "Assembly loads with empty components."
+          }
+        ]
+      },
+      {
+        "text": "Every ticket is closed with the same manual workaround, so the underlying cause is never addressed.",
+        "quotes": [
+          {
+            "ticket": "INC001921",
+            "quote": "Resolved references from vault and checked in."
+          },
+          {
+            "ticket": "INC001306",
+            "quote": "Resolved references from vault and checked in."
+          }
+        ]
+      }
+    ],
+    "fix": "Make part renames go only through a vault-controlled rename that automatically updates and checks in all where-used assemblies and drawings, and block renames done outside the vault."
+  }
+}

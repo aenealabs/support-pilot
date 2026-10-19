@@ -1,0 +1,83 @@
+{
+  "input": "<problem>\nPRB-11: 83 tickets in 12 months; 21 in the last 3 months, 16 in the 3 before; median 53.6 hours to resolve; units: Aerospace Systems 26, Electrical Products 21, eMobility 18, Industrial Controls 18; no knowledge-base article covers it\n</problem>\n<tickets>\nINC000936 | Released drawing still old in viewer | Plant sees the old drawing in the viewer after release. | Cleared viewer cache on the server; revision showed after refresh.\nINC000944 | Viewer not updated after ECO release | ECO released this morning but the viewer still shows revision B of 330-005527. | Cleared viewer cache on the server; revision showed after refresh.\nINC000979 | Released drawing still old in viewer | Viewer cache seems stale for 330-008535. | Cleared viewer cache on the server; revision showed after refresh.\nINC000990 | Viewer not updated after ECO release | ECO released this morning but the viewer still shows revision B of 100-005388. | Cleared viewer cache on the server; revision showed after refresh.\nINC001026 | Wrong revision in viewer after release | Viewer cache seems stale for 330-005312. | Cleared viewer cache on the server; revision showed after refresh.\nINC001072 | Viewer shows old revision | Plant sees the old drawing in the viewer after release. | Cleared viewer cache on the server; revision showed after refresh.\nINC001073 | Wrong revision in viewer after release | ECO released this morning but the viewer still shows revision B of 210-004300. | Cleared viewer cache on the server; revision showed after refresh.\nINC001161 | Viewer not updated after ECO release | Viewer cache seems stale for 100-007381. | Cleared viewer cache on the server; revision showed after refresh.\nINC001165 | Viewer shows old revision | ECO released this morning but the viewer still shows revision B of 330-008377. | Cleared viewer cache on the server; revision showed after refresh.\nINC001175 | Released drawing still old in viewer | Viewer cache seems stale for 210-008596. | Cleared viewer cache on the server; revision showed after refresh.\nINC001187 | Viewer shows old revision | ECO released this morning but the viewer still shows revision B of 450-005832. | Cleared viewer cache on the server; revision showed after refresh.\nINC001205 | Viewer shows old revision | Plant sees the old drawing in the viewer after release. | Cleared viewer cache on the server; revision showed after refresh.\nINC001260 | Viewer shows old revision | ECO released this morning but the viewer still shows revision B of 100-004238. | Cleared viewer cache on the server; revision showed after refresh.\nINC001281 | Wrong revision in viewer after release | Plant sees the old drawing in the viewer after release. | Cleared viewer cache on the server; revision showed after refresh.\nINC001299 | Viewer not updated after ECO release | ECO released this morning but the viewer still shows revision B of 210-006186. | Cleared viewer cache on the server; revision showed after refresh.\nINC001409 | Viewer not updated after ECO release | ECO released this morning but the viewer still shows revision B of 100-004520. | Cleared viewer cache on the server; revision showed after refresh.\nINC001456 | Wrong revision in viewer after release | ECO released this morning but the viewer still shows revision B of 210-008785. | Cleared viewer cache on the server; revision showed after refresh.\nINC001459 | Released drawing still old in viewer | Viewer cache seems stale for 210-007415. | Cleared viewer cache on the server; revision showed after refresh.\nINC001468 | Viewer shows old revision | Plant sees the old drawing in the viewer after release. | Cleared viewer cache on the server; revision showed after refresh.\nINC001516 | Viewer not updated after ECO release | Plant sees the old drawing in the viewer after release. | Cleared viewer cache on the server; revision showed after refresh.\nINC001529 | Wrong revision in viewer after release | Viewer cache seems stale for 100-007114. | Cleared viewer cache on the server; revision showed after refresh.\nINC001533 | Released drawing still old in viewer | Plant sees the old drawing in the viewer after release. | Cleared viewer cache on the server; revision showed after refresh.\nINC001546 | Viewer not updated after ECO release | Viewer cache seems stale for 100-005758. | Cleared viewer cache on the server; revision showed after refresh.\nINC001564 | Released drawing still old in viewer | ECO released this morning but the viewer still shows revision B of 100-005050. | Cleared viewer cache on the server; revision showed after refresh.\nINC001565 | Viewer shows old revision | Plant sees the old drawing in the viewer after release. | Cleared viewer cache on the server; revision showed after refresh.\nINC001612 | Wrong revision in viewer after release | Viewer cache seems stale for 330-005281. | Cleared viewer cache on the server; revision showed after refresh.\nINC001617 | Viewer shows old revision | Viewer cache seems stale for 330-008899. | Cleared viewer cache on the server; revision showed after refresh.\nINC001635 | Released drawing still old in viewer | ECO released this morning but the viewer still shows revision B of 210-004188. | Cleared viewer cache on the server; revision showed after refresh.\nINC001667 | Wrong revision in viewer after release | Plant sees the old drawing in the viewer after release. | Cleared viewer cache on the server; revision showed after refresh.\nINC001670 | Viewer not updated after ECO release | Viewer cache seems stale for 210-008236. | Cleared viewer cache on the server; revision showed after refresh.\nINC001680 | Viewer shows old revision | ECO released this morning but the viewer still shows revision B of 210-004240. | Cleared viewer cache on the server; revision showed after refresh.\nINC001690 | Released drawing still old in viewer | Viewer cache seems stale for 100-007542. | Cleared viewer cache on the server; revision showed after refresh.\nINC001721 | Viewer not updated after ECO release | ECO released this morning but the viewer still shows revision B of 330-007176. | Cleared viewer cache on the server; revision showed after refresh.\nINC001742 | Released drawing still old in viewer | ECO released this morning but the viewer still shows revision B of 210-004941. | Cleared viewer cache on the server; revision showed after refresh.\nINC001776 | Released drawing still old in viewer | Plant sees the old drawing in the viewer after release. | Cleared viewer cache on the server; revision showed after refresh.\nINC001810 | Viewer shows old revision | Viewer cache seems stale for 450-008457. | Cleared viewer cache on the server; revision showed after refresh.\nINC001820 | Released drawing still old in viewer | ECO released this morning but the viewer still shows revision B of 210-005634. | Cleared viewer cache on the server; revision showed after refresh.\nINC001870 | Viewer not updated after ECO release | Viewer cache seems stale for 210-007391. | Cleared viewer cache on the server; revision showed after refresh.\nINC001907 | Released drawing still old in viewer | ECO released this morning but the viewer still shows revision B of 450-005548. | Cleared viewer cache on the server; revision showed after refresh.\nINC001927 | Wrong revision in viewer after release | Viewer cache seems stale for 450-006015. | Cleared viewer cache on the server; revision showed after refresh.\n</tickets>",
+  "output": {
+    "name": "Viewer cache not invalidated on ECO release",
+    "summary": "After an ECO releases a new drawing revision, plant users still see the old revision in the viewer until support manually clears the server-side viewer cache.",
+    "root_cause": {
+      "text": "Likely the ECO release event does not trigger invalidation or refresh of the server-side viewer cache, so the cache keeps serving the superseded revision.",
+      "quotes": [
+        {
+          "ticket": "INC000944",
+          "quote": "ECO released this morning but the viewer still shows revision B of 330-005527."
+        },
+        {
+          "ticket": "INC000979",
+          "quote": "Viewer cache seems stale for 330-008535."
+        },
+        {
+          "ticket": "INC000936",
+          "quote": "Cleared viewer cache on the server; revision showed after refresh."
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "text": "Every listed ticket was resolved the same way, by clearing the viewer cache on the server, after which the new revision appeared.",
+        "quotes": [
+          {
+            "ticket": "INC001927",
+            "quote": "Cleared viewer cache on the server; revision showed after refresh."
+          },
+          {
+            "ticket": "INC001026",
+            "quote": "Cleared viewer cache on the server; revision showed after refresh."
+          }
+        ]
+      },
+      {
+        "text": "Users report the stale view on the same day as the release, which points to the release step rather than a slow nightly process.",
+        "quotes": [
+          {
+            "ticket": "INC001409",
+            "quote": "ECO released this morning but the viewer still shows revision B of 100-004520."
+          },
+          {
+            "ticket": "INC001680",
+            "quote": "ECO released this morning but the viewer still shows revision B of 210-004240."
+          }
+        ]
+      },
+      {
+        "text": "The problem hits many part-number families, not one part or product line, which suggests a systemic release-to-viewer gap.",
+        "quotes": [
+          {
+            "ticket": "INC001187",
+            "quote": "viewer still shows revision B of 450-005832"
+          },
+          {
+            "ticket": "INC001161",
+            "quote": "Viewer cache seems stale for 100-007381."
+          },
+          {
+            "ticket": "INC001670",
+            "quote": "Viewer cache seems stale for 210-008236."
+          }
+        ]
+      },
+      {
+        "text": "Plant users act on the drawings shown in the viewer, so a stale cache exposes them to superseded drawings after release.",
+        "quotes": [
+          {
+            "ticket": "INC001072",
+            "quote": "Plant sees the old drawing in the viewer after release."
+          },
+          {
+            "ticket": "INC001565",
+            "quote": "Plant sees the old drawing in the viewer after release."
+          }
+        ]
+      }
+    ],
+    "fix": "Add an automated step to the ECO release workflow that invalidates or regenerates the viewer cache entries for every released item, so the viewer serves the new revision without manual cache clearing."
+  }
+}

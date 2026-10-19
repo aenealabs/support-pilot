@@ -1,0 +1,79 @@
+{
+  "input": "<problem>\nPRB-1: 262 tickets in 12 months; 101 in the last 3 months, 66 in the 3 before; median 23.1 hours to resolve; units: Industrial Controls 67, Electrical Products 67, Aerospace Systems 65, eMobility 63; article KB-301 linked on 56%\n</problem>\n<tickets>\nINC001753 | BOM transfer to SAP failed for 210-006950 | Released 210-006950 two days ago and the plant still does not see it in SAP. | Integration team corrected the mapping and retried the transfer.\nINC001758 | BOM transfer to SAP failed for 210-004559 | Transfer status shows Failed for 210-004559; plant 1010 is waiting. | Integration team corrected the mapping and retried the transfer.\nINC001759 | SAP missing BOM released yesterday | BOM released but SAP still shows the old revision for 330-006596. | Integration team corrected the mapping and retried the transfer.\nINC001769 | Integration error on BOM 450-008228 | BOM released but SAP still shows the old revision for 450-008228. | Integration team corrected the mapping and retried the transfer.\nINC001771 | BOM transfer to SAP failed for 100-006329 | Transfer status shows Failed for 100-006329; plant 1020 is waiting. | Integration team corrected the mapping and retried the transfer.\nINC001774 | SAP missing BOM released yesterday | Transfer status shows Failed for 100-008275; plant 3100 is waiting. | Integration team corrected the mapping and retried the transfer.\nINC001781 | SAP missing BOM released yesterday | Released 100-006166 two days ago and the plant still does not see it in SAP. | Integration team corrected the mapping and retried the transfer.\nINC001784 | Integration error on BOM 330-008834 | BOM released but SAP still shows the old revision for 330-008834. | Integration team corrected the mapping and retried the transfer.\nINC001789 | SAP missing BOM released yesterday | Released 100-004612 two days ago and the plant still does not see it in SAP. | Integration team corrected the mapping and retried the transfer.\nINC001790 | Plant cannot see new BOM | Released 210-006652 two days ago and the plant still does not see it in SAP. | Integration team corrected the mapping and retried the transfer.\nINC001793 | Released BOM not in SAP | Released 100-008932 two days ago and the plant still does not see it in SAP. | Integration team corrected the mapping and retried the transfer.\nINC001797 | Integration error on BOM 330-007768 | Transfer status shows Failed for 330-007768; plant 2030 is waiting. | Integration team corrected the mapping and retried the transfer.\nINC001798 | Released BOM not in SAP | BOM released but SAP still shows the old revision for 450-007987. | Integration team corrected the mapping and retried the transfer.\nINC001803 | Released BOM not in SAP | Released 330-004834 two days ago and the plant still does not see it in SAP. | Integration team corrected the mapping and retried the transfer.\nINC001806 | BOM transfer to SAP failed for 100-007421 | BOM released but SAP still shows the old revision for 100-007421. | Integration team corrected the mapping and retried the transfer.\nINC001809 | SAP missing BOM released yesterday | Transfer status shows Failed for 100-005029; plant 1010 is waiting. | Integration team corrected the mapping and retried the transfer.\nINC001813 | Plant cannot see new BOM | Released 330-007519 two days ago and the plant still does not see it in SAP. | Integration team corrected the mapping and retried the transfer.\nINC001821 | SAP missing BOM released yesterday | BOM released but SAP still shows the old revision for 330-007871. | Integration team corrected the mapping and retried the transfer.\nINC001834 | BOM transfer to SAP failed for 450-006451 | Released 450-006451 two days ago and the plant still does not see it in SAP. | Integration team corrected the mapping and retried the transfer.\nINC001836 | SAP missing BOM released yesterday | BOM released but SAP still shows the old revision for 210-004377. | Integration team corrected the mapping and retried the transfer.\nINC001849 | Released BOM not in SAP | Released 100-006971 two days ago and the plant still does not see it in SAP. | Integration team corrected the mapping and retried the transfer.\nINC001854 | Plant cannot see new BOM | Released 210-005378 two days ago and the plant still does not see it in SAP. | Integration team corrected the mapping and retried the transfer.\nINC001859 | Released BOM not in SAP | Transfer status shows Failed for 100-006248; plant 1010 is waiting. | Integration team corrected the mapping and retried the transfer.\nINC001862 | Released BOM not in SAP | Released 100-005777 two days ago and the plant still does not see it in SAP. | Integration team corrected the mapping and retried the transfer.\nINC001866 | SAP missing BOM released yesterday | Transfer status shows Failed for 450-004364; plant 1010 is waiting. | Integration team corrected the mapping and retried the transfer.\nINC001867 | BOM transfer to SAP failed for 330-008472 | Transfer status shows Failed for 330-008472; plant 3100 is waiting. | Integration team corrected the mapping and retried the transfer.\nINC001872 | Integration error on BOM 100-005265 | Released 100-005265 two days ago and the plant still does not see it in SAP. | Integration team corrected the mapping and retried the transfer.\nINC001874 | BOM transfer to SAP failed for 210-006390 | Transfer status shows Failed for 210-006390; plant 3100 is waiting. | Integration team corrected the mapping and retried the transfer.\nINC001877 | Plant cannot see new BOM | BOM released but SAP still shows the old revision for 450-004123. | Integration team corrected the mapping and retried the transfer.\nINC001885 | BOM transfer to SAP failed for 450-006871 | Released 450-006871 two days ago and the plant still does not see it in SAP. | Integration team corrected the mapping and retried the transfer.\nINC001888 | BOM transfer to SAP failed for 330-004200 | BOM released but SAP still shows the old revision for 330-004200. | Integration team corrected the mapping and retried the transfer.\nINC001889 | BOM transfer to SAP failed for 100-008035 | Released 100-008035 two days ago and the plant still does not see it in SAP. | Integration team corrected the mapping and retried the transfer.\nINC001892 | BOM transfer to SAP failed for 330-005838 | Transfer status shows Failed for 330-005838; plant 1010 is waiting. | Integration team corrected the mapping and retried the transfer.\nINC001893 | SAP missing BOM released yesterday | Released 330-004671 two days ago and the plant still does not see it in SAP. | Integration team corrected the mapping and retried the transfer.\nINC001895 | Released BOM not in SAP | BOM released but SAP still shows the old revision for 450-007440. | Integration team corrected the mapping and retried the transfer.\nINC001896 | Released BOM not in SAP | Released 210-006391 two days ago and the plant still does not see it in SAP. | Integration team corrected the mapping and retried the transfer.\nINC001900 | BOM transfer to SAP failed for 210-008655 | Transfer status shows Failed for 210-008655; plant 2030 is waiting. | Integration team corrected the mapping and retried the transfer.\nINC001903 | SAP missing BOM released yesterday | Transfer status shows Failed for 450-005570; plant 1020 is waiting. | Integration team corrected the mapping and retried the transfer.\nINC001917 | SAP missing BOM released yesterday | Released 210-007922 two days ago and the plant still does not see it in SAP. | Integration team corrected the mapping and retried the transfer.\nINC001925 | Integration error on BOM 330-006503 | Transfer status shows Failed for 330-006503; plant 3100 is waiting. | Integration team corrected the mapping and retried the transfer.\n</tickets>",
+  "output": {
+    "name": "Released BOMs failing to transfer to SAP due to integration mapping errors",
+    "summary": "Engineers release BOMs in PLM, but the transfer to SAP fails or never arrives, so plants keep seeing the old revision or no BOM at all and wait days for the integration team to fix it.",
+    "root_cause": {
+      "text": "Likely, the PLM-to-SAP BOM integration mapping is incomplete or out of date for some released BOMs, so transfers fail until the integration team corrects the mapping by hand and retries.",
+      "quotes": [
+        {
+          "ticket": "INC001753",
+          "quote": "Integration team corrected the mapping and retried the transfer."
+        },
+        {
+          "ticket": "INC001758",
+          "quote": "Transfer status shows Failed for 210-004559; plant 1010 is waiting."
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "text": "Every ticket shown was resolved the same way: the integration team corrected the mapping and retried the transfer.",
+        "quotes": [
+          {
+            "ticket": "INC001925",
+            "quote": "Integration team corrected the mapping and retried the transfer."
+          },
+          {
+            "ticket": "INC001859",
+            "quote": "Integration team corrected the mapping and retried the transfer."
+          }
+        ]
+      },
+      {
+        "text": "Failures are found by users rather than by monitoring, often days after release.",
+        "quotes": [
+          {
+            "ticket": "INC001790",
+            "quote": "Released 210-006652 two days ago and the plant still does not see it in SAP."
+          },
+          {
+            "ticket": "INC001793",
+            "quote": "Released 100-008932 two days ago and the plant still does not see it in SAP."
+          }
+        ]
+      },
+      {
+        "text": "Some failures leave plants working from a stale revision, not just a missing BOM.",
+        "quotes": [
+          {
+            "ticket": "INC001759",
+            "quote": "BOM released but SAP still shows the old revision for 330-006596."
+          },
+          {
+            "ticket": "INC001798",
+            "quote": "BOM released but SAP still shows the old revision for 450-007987."
+          }
+        ]
+      },
+      {
+        "text": "The failures hit several plants and part number ranges, so this is not one plant or product line.",
+        "quotes": [
+          {
+            "ticket": "INC001774",
+            "quote": "Transfer status shows Failed for 100-008275; plant 3100 is waiting."
+          },
+          {
+            "ticket": "INC001797",
+            "quote": "Transfer status shows Failed for 330-007768; plant 2030 is waiting."
+          },
+          {
+            "ticket": "INC001771",
+            "quote": "Transfer status shows Failed for 100-006329; plant 1020 is waiting."
+          }
+        ]
+      }
+    ],
+    "fix": "Have the integration team review the mapping corrections made on these tickets, fix the missing or incorrect mapping rules permanently in the PLM-to-SAP BOM interface, and add a check that blocks BOM release (or alerts integration support at once) when a BOM cannot be mapped."
+  }
+}

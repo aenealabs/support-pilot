@@ -1,0 +1,75 @@
+{
+  "input": "<problem>\nPRB-5: 165 tickets in 12 months; 36 in the last 3 months, 45 in the 3 before; median 22.2 hours to resolve; units: eMobility 52, Electrical Products 45, Industrial Controls 34, Aerospace Systems 34; article KB-503 linked on 57%\n</problem>\n<tickets>\nINC001390 | Cannot get a license | Our team keeps running out of licenses after lunch. | License released by timeout; advised manager to request seats if it recurs.\nINC001395 | License error when starting PLM | Cannot start the PLM client, license error. | License released by timeout; advised manager to request seats if it recurs.\nINC001413 | All licenses in use | Cannot start the PLM client, license error. | License released by timeout; advised manager to request seats if it recurs.\nINC001449 | All licenses in use | Cannot start the PLM client, license error. | License released by timeout; advised manager to request seats if it recurs.\nINC001476 | No PLM license available | Our team keeps running out of licenses after lunch. | License released by timeout; advised manager to request seats if it recurs.\nINC001491 | All licenses in use | Cannot start the PLM client, license error. | License released by timeout; advised manager to request seats if it recurs.\nINC001505 | No PLM license available | Getting 'no license available' every morning since Monday. | License released by timeout; advised manager to request seats if it recurs.\nINC001517 | All licenses in use | Getting 'no license available' every morning since Monday. | License released by timeout; advised manager to request seats if it recurs.\nINC001519 | Cannot get a license | Getting 'no license available' every morning since Monday. | License released by timeout; advised manager to request seats if it recurs.\nINC001523 | License error when starting PLM | Getting 'no license available' every morning since Monday. | License released by timeout; advised manager to request seats if it recurs.\nINC001527 | All licenses in use | Our team keeps running out of licenses after lunch. | License released by timeout; advised manager to request seats if it recurs.\nINC001540 | No PLM license available | Getting 'no license available' every morning since Monday. | License released by timeout; advised manager to request seats if it recurs.\nINC001576 | License error when starting PLM | Getting 'no license available' every morning since Monday. | License released by timeout; advised manager to request seats if it recurs.\nINC001577 | License error when starting PLM | Getting 'no license available' every morning since Monday. | License released by timeout; advised manager to request seats if it recurs.\nINC001591 | Cannot get a license | Cannot start the PLM client, license error. | License released by timeout; advised manager to request seats if it recurs.\nINC001622 | License error when starting PLM | Getting 'no license available' every morning since Monday. | License released by timeout; advised manager to request seats if it recurs.\nINC001636 | License error when starting PLM | Getting 'no license available' every morning since Monday. | License released by timeout; advised manager to request seats if it recurs.\nINC001660 | Cannot get a license | Our team keeps running out of licenses after lunch. | License released by timeout; advised manager to request seats if it recurs.\nINC001683 | Cannot get a license | Cannot start the PLM client, license error. | License released by timeout; advised manager to request seats if it recurs.\nINC001698 | Cannot get a license | Our team keeps running out of licenses after lunch. | License released by timeout; advised manager to request seats if it recurs.\nINC001732 | License error when starting PLM | Our team keeps running out of licenses after lunch. | License released by timeout; advised manager to request seats if it recurs.\nINC001736 | Cannot get a license | Getting 'no license available' every morning since Monday. | License released by timeout; advised manager to request seats if it recurs.\nINC001747 | No PLM license available | Getting 'no license available' every morning since Monday. | License released by timeout; advised manager to request seats if it recurs.\nINC001755 | All licenses in use | Cannot start the PLM client, license error. | License released by timeout; advised manager to request seats if it recurs.\nINC001756 | License error when starting PLM | Our team keeps running out of licenses after lunch. | License released by timeout; advised manager to request seats if it recurs.\nINC001760 | License error when starting PLM | Cannot start the PLM client, license error. | License released by timeout; advised manager to request seats if it recurs.\nINC001764 | No PLM license available | Our team keeps running out of licenses after lunch. | License released by timeout; advised manager to request seats if it recurs.\nINC001773 | All licenses in use | Our team keeps running out of licenses after lunch. | License released by timeout; advised manager to request seats if it recurs.\nINC001801 | License error when starting PLM | Cannot start the PLM client, license error. | License released by timeout; advised manager to request seats if it recurs.\nINC001804 | All licenses in use | Our team keeps running out of licenses after lunch. | License released by timeout; advised manager to request seats if it recurs.\nINC001811 | Cannot get a license | Getting 'no license available' every morning since Monday. | License released by timeout; advised manager to request seats if it recurs.\nINC001823 | All licenses in use | Cannot start the PLM client, license error. | License released by timeout; advised manager to request seats if it recurs.\nINC001853 | License error when starting PLM | Getting 'no license available' every morning since Monday. | License released by timeout; advised manager to request seats if it recurs.\nINC001881 | Cannot get a license | Our team keeps running out of licenses after lunch. | License released by timeout; advised manager to request seats if it recurs.\nINC001884 | No PLM license available | Cannot start the PLM client, license error. | License released by timeout; advised manager to request seats if it recurs.\nINC001910 | License error when starting PLM | Getting 'no license available' every morning since Monday. | License released by timeout; advised manager to request seats if it recurs.\nINC001914 | All licenses in use | Cannot start the PLM client, license error. | License released by timeout; advised manager to request seats if it recurs.\nINC001915 | License error when starting PLM | Cannot start the PLM client, license error. | License released by timeout; advised manager to request seats if it recurs.\nINC001918 | License error when starting PLM | Our team keeps running out of licenses after lunch. | License released by timeout; advised manager to request seats if it recurs.\nINC001920 | All licenses in use | Our team keeps running out of licenses after lunch. | License released by timeout; advised manager to request seats if it recurs.\n</tickets>",
+  "output": {
+    "name": "PLM floating license pool exhausted by idle/stale sessions",
+    "summary": "Users across several business units cannot start the PLM client because no floating license is available, typically in the morning or after lunch, and wait until a license is released by timeout.",
+    "root_cause": {
+      "text": "Likely the license server holds seats for idle or abandoned client sessions until a timeout expires, so the pool is drained at peak start times (morning, after lunch) rather than truly undersized.",
+      "quotes": [
+        {
+          "ticket": "INC001390",
+          "quote": "License released by timeout"
+        },
+        {
+          "ticket": "INC001476",
+          "quote": "Our team keeps running out of licenses after lunch."
+        },
+        {
+          "ticket": "INC001505",
+          "quote": "Getting 'no license available' every morning since Monday."
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "text": "Every shown ticket was resolved the same way: waiting for a license to be released by timeout, with no change made to the license configuration.",
+        "quotes": [
+          {
+            "ticket": "INC001920",
+            "quote": "License released by timeout; advised manager to request seats if it recurs."
+          },
+          {
+            "ticket": "INC001395",
+            "quote": "License released by timeout; advised manager to request seats if it recurs."
+          }
+        ]
+      },
+      {
+        "text": "Failures cluster at predictable times of day when users return to their desks, consistent with seats still held by sessions left open earlier.",
+        "quotes": [
+          {
+            "ticket": "INC001660",
+            "quote": "Our team keeps running out of licenses after lunch."
+          },
+          {
+            "ticket": "INC001811",
+            "quote": "Getting 'no license available' every morning since Monday."
+          }
+        ]
+      },
+      {
+        "text": "Users are blocked at client startup with a license error, so the issue stops work entirely rather than degrading it.",
+        "quotes": [
+          {
+            "ticket": "INC001413",
+            "quote": "Cannot start the PLM client, license error."
+          },
+          {
+            "ticket": "INC001884",
+            "quote": "Cannot start the PLM client, license error."
+          }
+        ]
+      },
+      {
+        "text": "The recurring advice to request more seats pushes the problem to managers instead of addressing how seats are released, and tickets keep recurring.",
+        "quotes": [
+          {
+            "ticket": "INC001764",
+            "quote": "advised manager to request seats if it recurs"
+          }
+        ]
+      }
+    ],
+    "fix": "Shorten the license server's idle-session timeout (and enable automatic check-in of licenses from idle or disconnected PLM clients), then monitor peak license usage per business unit to decide from data whether additional seats are actually needed."
+  }
+}

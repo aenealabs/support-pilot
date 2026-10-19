@@ -1,0 +1,83 @@
+{
+  "input": "<problem>\nPRB-2: 239 tickets in 12 months; 60 in the last 3 months, 62 in the 3 before; median 24.8 hours to resolve; units: Electrical Products 62, eMobility 61, Aerospace Systems 59, Industrial Controls 57; article KB-101 linked on 54%\n</problem>\n<tickets>\nINC001631 | Cannot check out cover_509.drw, checked out by someone else | I need to edit cover_509.drw but the vault shows it checked out by H. Sato. | Vault admin forced undo check-out after manager approval.\nINC001641 | CAD file locked by another user | I need to edit mount_180.drw but the vault shows it checked out by E. Duarte. | Vault admin forced undo check-out after manager approval.\nINC001647 | File locked in vault | Cannot save my changes to bracket_976.drw; vault says it is locked. | Vault admin forced undo check-out after manager approval.\nINC001654 | Vault says file is checked out by G. Brennan | G. Brennan has had busbar_122.prt checked out for two weeks and is on leave. | Vault admin forced undo check-out after manager approval.\nINC001655 | Need mount_937.prt unlocked, owner left the company | C. Lindqvist has had mount_937.prt checked out for two weeks and is on leave. | Vault admin forced undo check-out after manager approval.\nINC001676 | Need housing_147.asm unlocked, owner left the company | I need to edit housing_147.asm but the vault shows it checked out by J. Adeyemi. | Vault admin forced undo check-out after manager approval.\nINC001679 | CAD file locked by another user | G. Brennan has had busbar_434.prt checked out for two weeks and is on leave. | Vault admin forced undo check-out after manager approval.\nINC001687 | Cannot check out housing_626.prt, checked out by someone else | N. Kowalski has had housing_626.prt checked out for two weeks and is on leave. | Vault admin forced undo check-out after manager approval.\nINC001688 | File locked in vault | Cannot save my changes to mount_959.prt; vault says it is locked. | Vault admin forced undo check-out after manager approval.\nINC001693 | Need mount_502.asm unlocked, owner left the company | Cannot save my changes to mount_502.asm; vault says it is locked. | Vault admin forced undo check-out after manager approval.\nINC001702 | CAD file locked by another user | O. Bakr has had housing_671.prt checked out for two weeks and is on leave. | Vault admin forced undo check-out after manager approval.\nINC001703 | Need cover_879.prt unlocked, owner left the company | Cannot save my changes to cover_879.prt; vault says it is locked. | Vault admin forced undo check-out after manager approval.\nINC001713 | Vault says file is checked out by N. Kowalski | I need to edit panel_274.asm but the vault shows it checked out by N. Kowalski. | Vault admin forced undo check-out after manager approval.\nINC001722 | CAD file locked by another user | J. Adeyemi has had cover_153.asm checked out for two weeks and is on leave. | Vault admin forced undo check-out after manager approval.\nINC001744 | CAD file locked by another user | Cannot save my changes to panel_333.asm; vault says it is locked. | Vault admin forced undo check-out after manager approval.\nINC001752 | Cannot check out housing_729.drw, checked out by someone else | B. Osei has had housing_729.drw checked out for two weeks and is on leave. | Vault admin forced undo check-out after manager approval.\nINC001754 | File locked in vault | Cannot save my changes to bracket_255.prt; vault says it is locked. | Vault admin forced undo check-out after manager approval.\nINC001766 | File locked in vault | Cannot save my changes to cover_399.drw; vault says it is locked. | Vault admin forced undo check-out after manager approval.\nINC001772 | File locked in vault | I. Moreau has had housing_420.drw checked out for two weeks and is on leave. | Vault admin forced undo check-out after manager approval.\nINC001778 | Need busbar_130.drw unlocked, owner left the company | M. Garcia has had busbar_130.drw checked out for two weeks and is on leave. | Vault admin forced undo check-out after manager approval.\nINC001779 | Cannot check out bracket_234.drw, checked out by someone else | O. Bakr has had bracket_234.drw checked out for two weeks and is on leave. | Vault admin forced undo check-out after manager approval.\nINC001800 | Vault says file is checked out by A. Novak | I need to edit bracket_441.asm but the vault shows it checked out by A. Novak. | Vault admin forced undo check-out after manager approval.\nINC001805 | Need busbar_350.prt unlocked, owner left the company | I need to edit busbar_350.prt but the vault shows it checked out by E. Duarte. | Vault admin forced undo check-out after manager approval.\nINC001816 | File locked in vault | I need to edit busbar_281.asm but the vault shows it checked out by B. Osei. | Vault admin forced undo check-out after manager approval.\nINC001829 | Need busbar_804.drw unlocked, owner left the company | D. Mehta has had busbar_804.drw checked out for two weeks and is on leave. | Vault admin forced undo check-out after manager approval.\nINC001838 | File locked in vault | I need to edit panel_645.drw but the vault shows it checked out by H. Sato. | Vault admin forced undo check-out after manager approval.\nINC001841 | Need housing_701.asm unlocked, owner left the company | I. Moreau has had housing_701.asm checked out for two weeks and is on leave. | Vault admin forced undo check-out after manager approval.\nINC001850 | CAD file locked by another user | Cannot save my changes to panel_285.drw; vault says it is locked. | Vault admin forced undo check-out after manager approval.\nINC001852 | Need busbar_873.drw unlocked, owner left the company | Cannot save my changes to busbar_873.drw; vault says it is locked. | Vault admin forced undo check-out after manager approval.\nINC001856 | CAD file locked by another user | I need to edit panel_654.prt but the vault shows it checked out by B. Osei. | Vault admin forced undo check-out after manager approval.\nINC001857 | Need mount_266.asm unlocked, owner left the company | B. Osei has had mount_266.asm checked out for two weeks and is on leave. | Vault admin forced undo check-out after manager approval.\nINC001858 | Cannot check out housing_283.drw, checked out by someone else | Cannot save my changes to housing_283.drw; vault says it is locked. | Vault admin forced undo check-out after manager approval.\nINC001868 | Need mount_786.asm unlocked, owner left the company | Cannot save my changes to mount_786.asm; vault says it is locked. | Vault admin forced undo check-out after manager approval.\nINC001869 | CAD file locked by another user | I need to edit mount_292.drw but the vault shows it checked out by C. Lindqvist. | Vault admin forced undo check-out after manager approval.\nINC001875 | File locked in vault | Cannot save my changes to cover_416.prt; vault says it is locked. | Vault admin forced undo check-out after manager approval.\nINC001879 | Need panel_524.asm unlocked, owner left the company | Cannot save my changes to panel_524.asm; vault says it is locked. | Vault admin forced undo check-out after manager approval.\nINC001886 | CAD file locked by another user | M. Garcia has had busbar_445.prt checked out for two weeks and is on leave. | Vault admin forced undo check-out after manager approval.\nINC001898 | File locked in vault | E. Duarte has had bracket_487.prt checked out for two weeks and is on leave. | Vault admin forced undo check-out after manager approval.\nINC001905 | Vault says file is checked out by M. Garcia | Cannot save my changes to bracket_715.drw; vault says it is locked. | Vault admin forced undo check-out after manager approval.\nINC001924 | Need housing_765.asm unlocked, owner left the company | I need to edit housing_765.asm but the vault shows it checked out by L. Fischer. | Vault admin forced undo check-out after manager approval.\n</tickets>",
+  "output": {
+    "name": "Stale vault check-outs blocking CAD edits (absent/departed owners)",
+    "summary": "Engineers cannot edit or save CAD parts, assemblies and drawings because the vault shows them checked out by colleagues who are on leave or have left, and they wait about a day for an admin to force an undo check-out.",
+    "root_cause": {
+      "text": "Likely the vault has no expiry, reassignment or offboarding/leave handling for check-outs, so locks held by absent or departed users persist until a vault admin manually forces an undo check-out with manager approval.",
+      "quotes": [
+        {
+          "ticket": "INC001654",
+          "quote": "G. Brennan has had busbar_122.prt checked out for two weeks and is on leave."
+        },
+        {
+          "ticket": "INC001655",
+          "quote": "Need mount_937.prt unlocked, owner left the company"
+        },
+        {
+          "ticket": "INC001631",
+          "quote": "Vault admin forced undo check-out after manager approval."
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "text": "Many tickets describe files held for two weeks by owners who are on leave, across different users and file types.",
+        "quotes": [
+          {
+            "ticket": "INC001687",
+            "quote": "N. Kowalski has had housing_626.prt checked out for two weeks and is on leave."
+          },
+          {
+            "ticket": "INC001778",
+            "quote": "M. Garcia has had busbar_130.drw checked out for two weeks and is on leave."
+          },
+          {
+            "ticket": "INC001857",
+            "quote": "B. Osei has had mount_266.asm checked out for two weeks and is on leave."
+          }
+        ]
+      },
+      {
+        "text": "Several tickets report the lock owner has left the company, meaning the lock can never be released by its holder.",
+        "quotes": [
+          {
+            "ticket": "INC001676",
+            "quote": "Need housing_147.asm unlocked, owner left the company"
+          },
+          {
+            "ticket": "INC001924",
+            "quote": "Need housing_765.asm unlocked, owner left the company"
+          }
+        ]
+      },
+      {
+        "text": "Users also hit the lock only at save time, losing the ability to save edits they already made.",
+        "quotes": [
+          {
+            "ticket": "INC001647",
+            "quote": "Cannot save my changes to bracket_976.drw; vault says it is locked."
+          },
+          {
+            "ticket": "INC001868",
+            "quote": "Cannot save my changes to mount_786.asm; vault says it is locked."
+          }
+        ]
+      },
+      {
+        "text": "Every ticket was resolved the same manual way, a forced undo check-out by a vault admin after manager approval.",
+        "quotes": [
+          {
+            "ticket": "INC001713",
+            "quote": "Vault admin forced undo check-out after manager approval."
+          },
+          {
+            "ticket": "INC001905",
+            "quote": "Vault admin forced undo check-out after manager approval."
+          }
+        ]
+      }
+    ],
+    "fix": "Add check-out lifecycle rules to the vault: automatically release or reassign check-outs held beyond a set age or by users flagged as on leave/offboarded (tied to the HR leave/offboarding process), with notification to the owner and their manager, so stale locks are cleared without a support ticket."
+  }
+}

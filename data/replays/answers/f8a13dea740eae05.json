@@ -1,0 +1,18 @@
+{
+  "input": "<question>\nHow do I get access to the export-controlled drawings folder for my program?\n</question>\n<passages>\n[KB-104 \u00a71] Request access to a CAD vault project folder - Request access to a CAD vault project folder\nProject folders are restricted by program. Request access through the IT service portal: **Request > Engineering applications > CAD vault folder access**. Your manager approves standard folders within one business day.\n\nExport-controlled folders are not covered by this article and are not granted through this request.\n\n[KB-602 \u00a71] Share a drawing with a supplier - Share a drawing with a supplier\nDrawings go to suppliers only through the supplier portal, never by email. Choose **Share > Supplier portal**, pick the supplier, and the portal records when they acknowledge it. Export-controlled drawings need a Trade Compliance check before sharing; the portal blocks them until it is done.\n\n[KB-702 \u00a71] CAD client crashes when opening large drawings - CAD client crashes when opening large drawings\nSet **Options > Performance > Large assembly mode** on, and turn off **Shaded previews** for drawings. If it still crashes, the graphics driver may be outdated: install the version listed on the engineering workstation page.\n\n[KB-502 \u00a71] Sign in to the PLM with single sign-on - Sign in to the PLM with single sign-on\nThe PLM uses company single sign-on. If you see **Access denied** after signing in, your PLM role has not been granted yet (see KB-501). If the sign-in page loops, clear your browser cookies for the PLM site and try again in a private window.\n\n[KB-701 \u00a71] Fix 'missing references' when opening an assembly - Fix 'missing references' when opening an assembly\nMissing references usually mean parts were renamed or moved outside the vault. Open the assembly from the vault (not from a local folder), choose **Tools > Resolve references > From vault**, and check in the assembly after it opens cleanly.\n\n[KB-102 \u00a71] Check in a large assembly without timeouts - Check in a large assembly without timeouts\nCheck-ins of assemblies with more than 2,000 components can time out over VPN.\n\n1. Close every drawing that references the assembly.\n2. In the vault client choose **Check in > Selected files only** and check in the changed parts first, then the top assembly.\n3. If you are on VPN, use the **Remote Site cache**: set **Tools > Options > Site** to your nearest site before checking in.\n\nIf a check-in still fails, the client log is in **Help > Show log folder**; attach `vault-client.log` to a ticket.\n</passages>",
+  "output": {
+    "answerable": false,
+    "steps": [
+      {
+        "text": "The standard CAD vault folder access request does not cover export-controlled folders, so access to them is not granted through that request.",
+        "cites": [
+          {
+            "passage": "KB-104 \u00a71",
+            "quote": "Export-controlled folders are not covered by this article and are not granted through this request."
+          }
+        ]
+      }
+    ],
+    "ticket_summary": "Engineer needs access to their program's export-controlled drawings folder; the knowledge base does not describe how this access is requested or granted."
+  }
+}

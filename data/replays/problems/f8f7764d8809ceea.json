@@ -1,0 +1,66 @@
+{
+  "input": "<problem>\nPRB-10: 98 tickets in 12 months; 20 in the last 3 months, 26 in the 3 before; median 24.9 hours to resolve; units: Electrical Products 29, Industrial Controls 27, eMobility 26, Aerospace Systems 16; article KB-102 linked on 57%\n</problem>\n<tickets>\nINC001106 | Large assembly check-in fails | Vault client hangs on check-in. | Set remote site cache; check-in succeeded.\nINC001117 | Vault check-in timeout | Vault client hangs on check-in. | Set remote site cache; check-in succeeded.\nINC001130 | Check-in times out over VPN | Vault client hangs on check-in. | Set remote site cache; check-in succeeded.\nINC001142 | Check-in times out over VPN | Vault client hangs on check-in. | Set remote site cache; check-in succeeded.\nINC001169 | Check-in times out over VPN | Vault client hangs on check-in. | Set remote site cache; check-in succeeded.\nINC001189 | Check-in times out over VPN | Vault client hangs on check-in. | Set remote site cache; check-in succeeded.\nINC001190 | Large assembly check-in fails | Checking in a 3,000 part assembly from home fails after 20 minutes. | Set remote site cache; check-in succeeded.\nINC001217 | Large assembly check-in fails | Checking in a 3,000 part assembly from home fails after 20 minutes. | Set remote site cache; check-in succeeded.\nINC001226 | Vault check-in timeout | Check-in of cover_116.asm times out on VPN. | Set remote site cache; check-in succeeded.\nINC001256 | Check-in times out over VPN | Vault client hangs on check-in. | Set remote site cache; check-in succeeded.\nINC001277 | Vault check-in timeout | Check-in of mount_505.drw times out on VPN. | Set remote site cache; check-in succeeded.\nINC001310 | Vault check-in timeout | Check-in of bracket_618.asm times out on VPN. | Set remote site cache; check-in succeeded.\nINC001325 | Vault check-in timeout | Check-in of mount_502.prt times out on VPN. | Set remote site cache; check-in succeeded.\nINC001340 | Vault check-in timeout | Vault client hangs on check-in. | Set remote site cache; check-in succeeded.\nINC001370 | Check-in times out over VPN | Checking in a 3,000 part assembly from home fails after 20 minutes. | Set remote site cache; check-in succeeded.\nINC001378 | Large assembly check-in fails | Check-in of bracket_723.asm times out on VPN. | Set remote site cache; check-in succeeded.\nINC001382 | Large assembly check-in fails | Vault client hangs on check-in. | Set remote site cache; check-in succeeded.\nINC001387 | Large assembly check-in fails | Check-in of mount_344.prt times out on VPN. | Set remote site cache; check-in succeeded.\nINC001452 | Vault check-in timeout | Checking in a 3,000 part assembly from home fails after 20 minutes. | Set remote site cache; check-in succeeded.\nINC001453 | Vault check-in timeout | Vault client hangs on check-in. | Set remote site cache; check-in succeeded.\nINC001470 | Check-in times out over VPN | Vault client hangs on check-in. | Set remote site cache; check-in succeeded.\nINC001478 | Check-in times out over VPN | Checking in a 3,000 part assembly from home fails after 20 minutes. | Set remote site cache; check-in succeeded.\nINC001481 | Large assembly check-in fails | Vault client hangs on check-in. | Set remote site cache; check-in succeeded.\nINC001487 | Vault check-in timeout | Checking in a 3,000 part assembly from home fails after 20 minutes. | Set remote site cache; check-in succeeded.\nINC001494 | Vault check-in timeout | Vault client hangs on check-in. | Set remote site cache; check-in succeeded.\nINC001528 | Large assembly check-in fails | Vault client hangs on check-in. | Set remote site cache; check-in succeeded.\nINC001602 | Check-in times out over VPN | Vault client hangs on check-in. | Set remote site cache; check-in succeeded.\nINC001623 | Vault check-in timeout | Checking in a 3,000 part assembly from home fails after 20 minutes. | Set remote site cache; check-in succeeded.\nINC001627 | Large assembly check-in fails | Vault client hangs on check-in. | Set remote site cache; check-in succeeded.\nINC001672 | Large assembly check-in fails | Vault client hangs on check-in. | Set remote site cache; check-in succeeded.\nINC001712 | Vault check-in timeout | Check-in of panel_391.prt times out on VPN. | Set remote site cache; check-in succeeded.\nINC001739 | Large assembly check-in fails | Check-in of bracket_751.prt times out on VPN. | Set remote site cache; check-in succeeded.\nINC001746 | Large assembly check-in fails | Checking in a 3,000 part assembly from home fails after 20 minutes. | Set remote site cache; check-in succeeded.\nINC001787 | Large assembly check-in fails | Check-in of mount_867.prt times out on VPN. | Set remote site cache; check-in succeeded.\nINC001812 | Large assembly check-in fails | Check-in of cover_301.drw times out on VPN. | Set remote site cache; check-in succeeded.\nINC001830 | Large assembly check-in fails | Checking in a 3,000 part assembly from home fails after 20 minutes. | Set remote site cache; check-in succeeded.\nINC001831 | Large assembly check-in fails | Checking in a 3,000 part assembly from home fails after 20 minutes. | Set remote site cache; check-in succeeded.\nINC001871 | Large assembly check-in fails | Checking in a 3,000 part assembly from home fails after 20 minutes. | Set remote site cache; check-in succeeded.\nINC001882 | Check-in times out over VPN | Check-in of bracket_169.drw times out on VPN. | Set remote site cache; check-in succeeded.\nINC001922 | Vault check-in timeout | Check-in of bracket_628.drw times out on VPN. | Set remote site cache; check-in succeeded.\n</tickets>",
+  "output": {
+    "name": "Vault check-in times out for remote/VPN users without remote site cache",
+    "summary": "Engineers working from home over VPN see the Vault client hang and check-ins of parts, drawings and large assemblies time out until support configures a remote site cache on their client.",
+    "root_cause": {
+      "text": "Likely, remote/VPN Vault clients are not provisioned with a remote site cache by default, so check-ins transfer files directly across the VPN to the central vault and exceed the timeout, especially for large assemblies.",
+      "quotes": [
+        {
+          "ticket": "INC001190",
+          "quote": "Checking in a 3,000 part assembly from home fails after 20 minutes."
+        },
+        {
+          "ticket": "INC001190",
+          "quote": "Set remote site cache; check-in succeeded."
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "text": "Every listed ticket was resolved the same way, by setting a remote site cache, after which check-in worked.",
+        "quotes": [
+          {
+            "ticket": "INC001106",
+            "quote": "Set remote site cache; check-in succeeded."
+          },
+          {
+            "ticket": "INC001922",
+            "quote": "Set remote site cache; check-in succeeded."
+          }
+        ]
+      },
+      {
+        "text": "Failures are tied to VPN/home connections rather than specific files, affecting single parts and drawings as well as assemblies.",
+        "quotes": [
+          {
+            "ticket": "INC001325",
+            "quote": "Check-in of mount_502.prt times out on VPN."
+          },
+          {
+            "ticket": "INC001277",
+            "quote": "Check-in of mount_505.drw times out on VPN."
+          },
+          {
+            "ticket": "INC001130",
+            "quote": "Check-in times out over VPN"
+          }
+        ]
+      },
+      {
+        "text": "Large assemblies fail after a long wait, consistent with a transfer timeout over a slow link.",
+        "quotes": [
+          {
+            "ticket": "INC001871",
+            "quote": "Checking in a 3,000 part assembly from home fails after 20 minutes."
+          },
+          {
+            "ticket": "INC001117",
+            "quote": "Vault client hangs on check-in."
+          }
+        ]
+      }
+    ],
+    "fix": "Make remote site cache part of the standard Vault client configuration for all remote/VPN users (pushed via client deployment or login policy) so no user starts checking in over VPN without it, instead of setting it per ticket."
+  }
+}

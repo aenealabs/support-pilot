@@ -1,0 +1,70 @@
+{
+  "input": "<problem>\nPRB-13: 76 tickets in 12 months; 22 in the last 3 months, 17 in the 3 before; median 28.9 hours to resolve; units: Aerospace Systems 23, Industrial Controls 19, eMobility 17, Electrical Products 17; article KB-702 linked on 62%\n</problem>\n<tickets>\nINC000962 | CAD freezes | Crash when switching to shaded view. | Enabled large assembly mode and updated the graphics driver.\nINC001000 | CAD crashes opening drawing | Large drawing freezes the client. | Enabled large assembly mode and updated the graphics driver.\nINC001008 | CAD freezes | Crash when switching to shaded view. | Enabled large assembly mode and updated the graphics driver.\nINC001025 | Client crash on large drawing | CAD client crashes every time I open busbar_600.prt. | Enabled large assembly mode and updated the graphics driver.\nINC001051 | CAD crashes opening drawing | Large drawing freezes the client. | Enabled large assembly mode and updated the graphics driver.\nINC001091 | CAD freezes | Large drawing freezes the client. | Enabled large assembly mode and updated the graphics driver.\nINC001143 | Client crash on large drawing | Crash when switching to shaded view. | Enabled large assembly mode and updated the graphics driver.\nINC001204 | CAD crashes opening drawing | Crash when switching to shaded view. | Enabled large assembly mode and updated the graphics driver.\nINC001209 | CAD crashes opening drawing | CAD client crashes every time I open cover_828.asm. | Enabled large assembly mode and updated the graphics driver.\nINC001244 | Client crash on large drawing | CAD client crashes every time I open bracket_859.prt. | Enabled large assembly mode and updated the graphics driver.\nINC001253 | Client crash on large drawing | CAD client crashes every time I open bracket_824.asm. | Enabled large assembly mode and updated the graphics driver.\nINC001263 | CAD crashes opening drawing | Crash when switching to shaded view. | Enabled large assembly mode and updated the graphics driver.\nINC001268 | CAD freezes | CAD client crashes every time I open panel_652.asm. | Enabled large assembly mode and updated the graphics driver.\nINC001293 | Client crash on large drawing | Crash when switching to shaded view. | Enabled large assembly mode and updated the graphics driver.\nINC001314 | CAD freezes | Crash when switching to shaded view. | Enabled large assembly mode and updated the graphics driver.\nINC001439 | CAD freezes | Crash when switching to shaded view. | Enabled large assembly mode and updated the graphics driver.\nINC001440 | Client crash on large drawing | CAD client crashes every time I open panel_286.asm. | Enabled large assembly mode and updated the graphics driver.\nINC001460 | CAD crashes opening drawing | Large drawing freezes the client. | Enabled large assembly mode and updated the graphics driver.\nINC001467 | CAD crashes opening drawing | CAD client crashes every time I open panel_891.drw. | Enabled large assembly mode and updated the graphics driver.\nINC001473 | CAD crashes opening drawing | Crash when switching to shaded view. | Enabled large assembly mode and updated the graphics driver.\nINC001515 | Client crash on large drawing | Crash when switching to shaded view. | Enabled large assembly mode and updated the graphics driver.\nINC001521 | CAD crashes opening drawing | Large drawing freezes the client. | Enabled large assembly mode and updated the graphics driver.\nINC001522 | Client crash on large drawing | Crash when switching to shaded view. | Enabled large assembly mode and updated the graphics driver.\nINC001525 | CAD crashes opening drawing | Crash when switching to shaded view. | Enabled large assembly mode and updated the graphics driver.\nINC001539 | Client crash on large drawing | Large drawing freezes the client. | Enabled large assembly mode and updated the graphics driver.\nINC001553 | CAD freezes | CAD client crashes every time I open cover_463.asm. | Enabled large assembly mode and updated the graphics driver.\nINC001563 | CAD crashes opening drawing | Crash when switching to shaded view. | Enabled large assembly mode and updated the graphics driver.\nINC001586 | CAD freezes | CAD client crashes every time I open bracket_517.prt. | Enabled large assembly mode and updated the graphics driver.\nINC001596 | CAD freezes | Large drawing freezes the client. | Enabled large assembly mode and updated the graphics driver.\nINC001598 | CAD freezes | Crash when switching to shaded view. | Enabled large assembly mode and updated the graphics driver.\nINC001599 | CAD crashes opening drawing | CAD client crashes every time I open busbar_435.asm. | Enabled large assembly mode and updated the graphics driver.\nINC001642 | CAD crashes opening drawing | Crash when switching to shaded view. | Enabled large assembly mode and updated the graphics driver.\nINC001783 | CAD freezes | Crash when switching to shaded view. | Enabled large assembly mode and updated the graphics driver.\nINC001788 | Client crash on large drawing | CAD client crashes every time I open panel_984.drw. | Enabled large assembly mode and updated the graphics driver.\nINC001833 | CAD freezes | CAD client crashes every time I open cover_174.drw. | Enabled large assembly mode and updated the graphics driver.\nINC001835 | CAD freezes | Crash when switching to shaded view. | Enabled large assembly mode and updated the graphics driver.\nINC001840 | CAD freezes | Large drawing freezes the client. | Enabled large assembly mode and updated the graphics driver.\nINC001855 | CAD crashes opening drawing | Large drawing freezes the client. | Enabled large assembly mode and updated the graphics driver.\nINC001891 | CAD freezes | Large drawing freezes the client. | Enabled large assembly mode and updated the graphics driver.\nINC001906 | CAD crashes opening drawing | Large drawing freezes the client. | Enabled large assembly mode and updated the graphics driver.\n</tickets>",
+  "output": {
+    "name": "CAD client crashes/freezes on large drawings and shaded view",
+    "summary": "Engineers' CAD client freezes or crashes when opening large parts, assemblies or drawings, or when switching to shaded view, until support enables large assembly mode and updates the graphics driver.",
+    "root_cause": {
+      "text": "Likely the standard CAD workstation configuration ships with large assembly mode disabled and an outdated graphics driver, so large models and shaded rendering overwhelm the client until each machine is fixed by hand.",
+      "quotes": [
+        {
+          "ticket": "INC001906",
+          "quote": "Enabled large assembly mode and updated the graphics driver."
+        },
+        {
+          "ticket": "INC000962",
+          "quote": "Crash when switching to shaded view."
+        },
+        {
+          "ticket": "INC001000",
+          "quote": "Large drawing freezes the client."
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "text": "Every listed ticket was resolved with the identical per-machine fix, indicating a known configuration gap rather than varied defects.",
+        "quotes": [
+          {
+            "ticket": "INC000962",
+            "quote": "Enabled large assembly mode and updated the graphics driver."
+          },
+          {
+            "ticket": "INC001891",
+            "quote": "Enabled large assembly mode and updated the graphics driver."
+          }
+        ]
+      },
+      {
+        "text": "Crashes are repeatable on specific files across part, assembly and drawing types, pointing to model size rather than file corruption.",
+        "quotes": [
+          {
+            "ticket": "INC001025",
+            "quote": "CAD client crashes every time I open busbar_600.prt."
+          },
+          {
+            "ticket": "INC001209",
+            "quote": "CAD client crashes every time I open cover_828.asm."
+          },
+          {
+            "ticket": "INC001467",
+            "quote": "CAD client crashes every time I open panel_891.drw."
+          }
+        ]
+      },
+      {
+        "text": "Shaded-view crashes recur frequently, consistent with a graphics driver issue.",
+        "quotes": [
+          {
+            "ticket": "INC001783",
+            "quote": "Crash when switching to shaded view."
+          },
+          {
+            "ticket": "INC001525",
+            "quote": "Crash when switching to shaded view."
+          }
+        ]
+      }
+    ],
+    "fix": "Bake large assembly mode into the default CAD client configuration and add the certified graphics driver to the managed workstation image with automated driver compliance enforcement, so no user machine runs CAD without them."
+  }
+}

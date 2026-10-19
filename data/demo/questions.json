@@ -1,0 +1,11 @@
+{
+  "_note": "Suggested questions for the offline demo; their answers are recorded.",
+  "questions": [
+    "Someone left the company and their CAD file is still checked out. How do I get it unlocked?",
+    "My released BOM isn't showing up in SAP for plant 2030. What should I do?",
+    "My ECO has been sitting at change board for three weeks. How do I find out who has it?",
+    "My ECO was returned. Do I create a new one?",
+    "I keep getting 'no license available' in the mornings.",
+    "How do I get access to the export-controlled drawings folder for my program?"
+  ]
+}

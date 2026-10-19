@@ -1,0 +1,72 @@
+{
+  "input": "<question>\nMy released BOM isn't showing up in SAP for plant 2030. What should I do?\n</question>\n<passages>\n[KB-301 \u00a71] A released BOM did not reach SAP - A released BOM did not reach SAP\nReleased BOMs transfer to SAP in a nightly batch at 01:00 plant time, so a BOM released during the day appears in SAP the next morning.\n\nIf it has not arrived after the nightly run:\n1. In the PLM, open the part and choose **Integration > Transfer status**.\n2. If the status is **Failed**, the message shows the first error, most often a material that does not exist in the receiving plant.\n3. Open a ticket in the **PLM-SAP Integration** queue with the part number, the plant, and the error text.\n\nDo not re-release the BOM to force a transfer; it creates a new revision.\n\n[KB-302 \u00a71] Material does not exist in plant - Material does not exist in plant\nThis transfer error means the part has not been extended to the receiving plant in SAP. Ask the plant's materials planner to extend the material, then choose **Integration > Retry transfer** on the part in the PLM. The retry runs in the next hourly window.\n\n[KB-303 \u00a71] Effectivity dates and the SAP cutover - Effectivity dates and the SAP cutover\nDuring an SAP cutover window, effectivity dates inside the window are rejected by the transfer. Pick a date after the window shown on the **Integration > Calendar** page, or ask the integration team for an exception.\n\n[KB-601 \u00a71] Print or export a drawing to PDF - Print or export a drawing to PDF\nOpen the drawing in the viewer and choose **Export > PDF (released)**. The PDF carries the revision and release stamp. Markups are not included. Released PDFs can be shared with suppliers only through the supplier portal.\n\n[KB-103 \u00a71] Restore a previous version of a CAD file - Restore a previous version of a CAD file\nEvery check-in creates a version. To go back:\n1. Right-click the file and choose **History**.\n2. Select the version and choose **Get this version**, then check it in as the latest.\n\nReleased files cannot be overwritten. To change a released file, start an ECO (see KB-201).\n\n[KB-503 \u00a71] PLM license not available - PLM license not available\nEngineer licenses are shared. **No license available** means all are in use. Licenses are released after 60 minutes of inactivity. If it keeps happening in your team, your manager can request more seats in the service portal under **Request > Software > PLM license seats**.\n</passages>",
+  "output": {
+    "answerable": true,
+    "steps": [
+      {
+        "text": "Released BOMs go to SAP in a nightly batch at 01:00 plant time. A BOM released during the day appears in SAP the next morning, so wait for the nightly run first.",
+        "cites": [
+          {
+            "passage": "KB-301 \u00a71",
+            "quote": "Released BOMs transfer to SAP in a nightly batch at 01:00 plant time, so a BOM released during the day appears in SAP the next morning."
+          }
+        ]
+      },
+      {
+        "text": "If it still hasn't arrived after the nightly run, open the part in the PLM and choose Integration > Transfer status.",
+        "cites": [
+          {
+            "passage": "KB-301 \u00a71",
+            "quote": "In the PLM, open the part and choose **Integration > Transfer status**."
+          }
+        ]
+      },
+      {
+        "text": "If the status is Failed, read the message. It shows the first error, most often a material that does not exist in the receiving plant.",
+        "cites": [
+          {
+            "passage": "KB-301 \u00a71",
+            "quote": "If the status is **Failed**, the message shows the first error, most often a material that does not exist in the receiving plant."
+          }
+        ]
+      },
+      {
+        "text": "If the error says the material does not exist in the plant, ask the materials planner for plant 2030 to extend the material. Then choose Integration > Retry transfer on the part in the PLM. The retry runs in the next hourly window.",
+        "cites": [
+          {
+            "passage": "KB-302 \u00a71",
+            "quote": "Ask the plant's materials planner to extend the material, then choose **Integration > Retry transfer** on the part in the PLM. The retry runs in the next hourly window."
+          }
+        ]
+      },
+      {
+        "text": "If an SAP cutover window is in progress, the transfer rejects effectivity dates inside that window. Pick a date after the window shown on the Integration > Calendar page, or ask the integration team for an exception.",
+        "cites": [
+          {
+            "passage": "KB-303 \u00a71",
+            "quote": "During an SAP cutover window, effectivity dates inside the window are rejected by the transfer. Pick a date after the window shown on the **Integration > Calendar** page, or ask the integration team for an exception."
+          }
+        ]
+      },
+      {
+        "text": "For any other failure, open a ticket in the PLM-SAP Integration queue. Include the part number, the plant (2030), and the error text.",
+        "cites": [
+          {
+            "passage": "KB-301 \u00a71",
+            "quote": "Open a ticket in the **PLM-SAP Integration** queue with the part number, the plant, and the error text."
+          }
+        ]
+      },
+      {
+        "text": "Do not re-release the BOM to force a transfer, because that creates a new revision.",
+        "cites": [
+          {
+            "passage": "KB-301 \u00a71",
+            "quote": "Do not re-release the BOM to force a transfer; it creates a new revision."
+          }
+        ]
+      }
+    ],
+    "ticket_summary": ""
+  }
+}

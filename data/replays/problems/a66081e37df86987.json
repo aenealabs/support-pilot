@@ -1,0 +1,79 @@
+{
+  "input": "<problem>\nPRB-12: 79 tickets in 12 months; 14 in the last 3 months, 19 in the 3 before; median 51.8 hours to resolve; units: Electrical Products 25, Industrial Controls 19, Aerospace Systems 18, eMobility 17; no knowledge-base article covers it\n</problem>\n<tickets>\nINC000814 | Where-used export times out | Where-used report times out for fasteners used in many assemblies. | Ran the report for the user from the database.\nINC000830 | Where-used export times out | Exporting where-used for 210-007835 to Excel spins and fails. | Ran the report for the user from the database.\nINC000889 | Cannot export where-used to Excel | Exporting where-used for 450-008010 to Excel spins and fails. | Ran the report for the user from the database.\nINC000890 | Where-used report fails for common part | Where-used report times out for fasteners used in many assemblies. | Ran the report for the user from the database.\nINC000913 | Cannot export where-used to Excel | Exporting where-used for 100-008465 to Excel spins and fails. | Ran the report for the user from the database.\nINC000931 | Where-used export times out | Need the where-used list for an ECO but the export fails. | Ran the report for the user from the database.\nINC000969 | Where-used export times out | Exporting where-used for 330-004825 to Excel spins and fails. | Ran the report for the user from the database.\nINC001006 | Where-used report fails for common part | Exporting where-used for 450-006501 to Excel spins and fails. | Ran the report for the user from the database.\nINC001013 | Cannot export where-used to Excel | Exporting where-used for 450-008357 to Excel spins and fails. | Ran the report for the user from the database.\nINC001018 | Where-used report fails for common part | Where-used report times out for fasteners used in many assemblies. | Ran the report for the user from the database.\nINC001037 | Where-used export times out | Where-used report times out for fasteners used in many assemblies. | Ran the report for the user from the database.\nINC001045 | Where-used export times out | Where-used report times out for fasteners used in many assemblies. | Ran the report for the user from the database.\nINC001070 | Where-used export times out | Need the where-used list for an ECO but the export fails. | Ran the report for the user from the database.\nINC001085 | Where-used report fails for common part | Where-used report times out for fasteners used in many assemblies. | Ran the report for the user from the database.\nINC001090 | Cannot export where-used to Excel | Exporting where-used for 210-005247 to Excel spins and fails. | Ran the report for the user from the database.\nINC001104 | Where-used export times out | Where-used report times out for fasteners used in many assemblies. | Ran the report for the user from the database.\nINC001159 | Where-used export times out | Need the where-used list for an ECO but the export fails. | Ran the report for the user from the database.\nINC001215 | Cannot export where-used to Excel | Where-used report times out for fasteners used in many assemblies. | Ran the report for the user from the database.\nINC001254 | Where-used export times out | Need the where-used list for an ECO but the export fails. | Ran the report for the user from the database.\nINC001255 | Where-used export times out | Need the where-used list for an ECO but the export fails. | Ran the report for the user from the database.\nINC001280 | Where-used report fails for common part | Exporting where-used for 100-006150 to Excel spins and fails. | Ran the report for the user from the database.\nINC001321 | Where-used report fails for common part | Where-used report times out for fasteners used in many assemblies. | Ran the report for the user from the database.\nINC001349 | Where-used report fails for common part | Where-used report times out for fasteners used in many assemblies. | Ran the report for the user from the database.\nINC001357 | Where-used report fails for common part | Exporting where-used for 100-007380 to Excel spins and fails. | Ran the report for the user from the database.\nINC001407 | Where-used export times out | Where-used report times out for fasteners used in many assemblies. | Ran the report for the user from the database.\nINC001417 | Where-used report fails for common part | Where-used report times out for fasteners used in many assemblies. | Ran the report for the user from the database.\nINC001465 | Where-used export times out | Exporting where-used for 210-007714 to Excel spins and fails. | Ran the report for the user from the database.\nINC001495 | Where-used report fails for common part | Exporting where-used for 210-007723 to Excel spins and fails. | Ran the report for the user from the database.\nINC001497 | Where-used export times out | Need the where-used list for an ECO but the export fails. | Ran the report for the user from the database.\nINC001511 | Where-used report fails for common part | Where-used report times out for fasteners used in many assemblies. | Ran the report for the user from the database.\nINC001557 | Where-used export times out | Where-used report times out for fasteners used in many assemblies. | Ran the report for the user from the database.\nINC001568 | Where-used export times out | Exporting where-used for 330-007358 to Excel spins and fails. | Ran the report for the user from the database.\nINC001656 | Where-used report fails for common part | Exporting where-used for 100-004152 to Excel spins and fails. | Ran the report for the user from the database.\nINC001663 | Cannot export where-used to Excel | Exporting where-used for 450-005668 to Excel spins and fails. | Ran the report for the user from the database.\nINC001678 | Where-used report fails for common part | Need the where-used list for an ECO but the export fails. | Ran the report for the user from the database.\nINC001792 | Where-used report fails for common part | Exporting where-used for 210-004126 to Excel spins and fails. | Ran the report for the user from the database.\nINC001865 | Cannot export where-used to Excel | Need the where-used list for an ECO but the export fails. | Ran the report for the user from the database.\nINC001873 | Where-used export times out | Need the where-used list for an ECO but the export fails. | Ran the report for the user from the database.\nINC001880 | Where-used report fails for common part | Need the where-used list for an ECO but the export fails. | Ran the report for the user from the database.\nINC001887 | Where-used report fails for common part | Exporting where-used for 330-007794 to Excel spins and fails. | Ran the report for the user from the database.\n</tickets>",
+  "output": {
+    "name": "Where-used report/Excel export times out for widely used parts",
+    "summary": "Engineers running a where-used report or Excel export for common parts such as fasteners get a spinning export that times out and fails, blocking ECO work until support runs the report for them.",
+    "root_cause": {
+      "text": "Likely the interactive where-used query and export cannot finish within the application timeout for parts used in many assemblies, while the same query run directly against the database succeeds.",
+      "quotes": [
+        {
+          "ticket": "INC000814",
+          "quote": "Where-used report times out for fasteners used in many assemblies."
+        },
+        {
+          "ticket": "INC000830",
+          "quote": "Exporting where-used for 210-007835 to Excel spins and fails."
+        },
+        {
+          "ticket": "INC000814",
+          "quote": "Ran the report for the user from the database."
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "text": "Failures cluster on common, heavily reused parts like fasteners, which points to result size rather than specific bad data.",
+        "quotes": [
+          {
+            "ticket": "INC001018",
+            "quote": "Where-used report fails for common part"
+          },
+          {
+            "ticket": "INC001045",
+            "quote": "Where-used report times out for fasteners used in many assemblies."
+          }
+        ]
+      },
+      {
+        "text": "The failure blocks change work because users need where-used lists for ECOs.",
+        "quotes": [
+          {
+            "ticket": "INC000931",
+            "quote": "Need the where-used list for an ECO but the export fails."
+          },
+          {
+            "ticket": "INC001880",
+            "quote": "Need the where-used list for an ECO but the export fails."
+          }
+        ]
+      },
+      {
+        "text": "Every ticket is resolved by a manual database workaround, so the underlying issue is never fixed and it keeps recurring.",
+        "quotes": [
+          {
+            "ticket": "INC001887",
+            "quote": "Ran the report for the user from the database."
+          },
+          {
+            "ticket": "INC001070",
+            "quote": "Ran the report for the user from the database."
+          }
+        ]
+      },
+      {
+        "text": "The Excel export path specifically hangs before failing across many part number families.",
+        "quotes": [
+          {
+            "ticket": "INC000889",
+            "quote": "Exporting where-used for 450-008010 to Excel spins and fails."
+          },
+          {
+            "ticket": "INC001568",
+            "quote": "Exporting where-used for 330-007358 to Excel spins and fails."
+          }
+        ]
+      }
+    ],
+    "fix": "Make where-used export for high-fan-out parts run as an asynchronous/background job against an indexed (or pre-computed) where-used query that delivers the Excel file when complete, instead of a synchronous request bound by the interactive timeout."
+  }
+}

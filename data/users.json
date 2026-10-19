@@ -1,0 +1,8 @@
+{
+  "_note": "Fictional demo users for the 'acting as' switcher. Support leads (approvers) import tickets and send problems to Backlog Pilot; everyone can ask. Real sign-in (SP_AUTH=oidc) replaces this.",
+  "users": [
+    {"id": "eng", "name": "Kenji Watanabe", "role": "Senior Design Engineer", "approver": false},
+    {"id": "lead", "name": "Hannah Liu", "role": "PLM Platform Lead", "approver": true},
+    {"id": "po", "name": "Jordan Lee", "role": "Senior Manager, IT Product Ownership", "approver": true}
+  ]
+}
